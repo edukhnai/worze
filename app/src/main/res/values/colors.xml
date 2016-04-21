@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="green_alphabet">#9b148616</color>
+    <color name="green_alphabet_pressed">#9B034504</color>
+    <color name="green_encrypt">#9b339036</color>
+    <color name="green_encrypt_pressed">#9B0F5612</color>
+    <color name="green_training">#9b5da75f</color>
+    <color name="green_training_pressed">#9B237326</color>
+    <color name="green_key">#9b8cc68d</color>
+    <color name="green_key_pressed">#9B488E49</color>
+    <color name="green_exit">#9bbcddbc</color>
+    <color name="green_exit_pressed">#9B68A568</color>
+    <color name="red_tomain">#a5902c2c</color>
+    <color name="red_tomain_pressed">#A55D0808</color>
+    <color name="white_translate">#beffffff</color>
+    <color name="white_translate_pressed">#BEB3AFAF</color>
+</resources>

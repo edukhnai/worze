@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@mipmap/back_two">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/train_et"
+        android:typeface="sans"
+        android:overScrollMode="always"
+        android:inputType="textNoSuggestions"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:background="#9bffffff"
+        android:gravity="top"
+        android:textSize="80sp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginBottom="80dp"
+        android:layout_above="@+id/ready_train"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp" />
+
+    <Button
+        android:layout_width="400dp"
+        android:layout_height="120dp"
+        android:text="@string/ready"
+        android:id="@+id/ready_train"
+        android:clickable="false"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:background="#64ffffff"
+        android:textSize="50sp" />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:id="@+id/btnReady"
+        android:clickable="true"
+        android:background="@mipmap/playsay_btn"
+        android:layout_marginTop="116dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

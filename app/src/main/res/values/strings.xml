@@ -1,0 +1,268 @@
+<resources>
+    <string name="app_name" translatable="false">Worze</string>
+    <string name="codeordecode">\u0020\u0020What do you want to do?\u0020\u0020</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="to_main">To main menu</string>
+    <string name="percent" translatable="false">0%</string>
+    <string name="loading">Loading...</string>
+    <string name="hallo">Hallo,</string>
+    <string name="player_name">Player!</string>
+    <string name="player_name1">Player</string>
+    <string name="addname">Add your name here</string>
+    <string name="name_quest">What is your name?</string>
+    <string name="ready">Ready!</string>
+    <string name="unnorm_word">\u0020\u0020I see a bad word!\u0020\u0020</string>
+    <string name="tocode">Code</string>
+    <string name="todecoderus">Decrypt(Ru)</string>
+    <string name="todecodeeng">Decrypt(Eng)</string>
+    <string name="listcode">Code: </string>
+    <string name="listsing">Singing: </string>
+    <string name="a_rus_code" translatable="false">.-</string>
+    <string name="a_rus_sing">dit-daah</string>
+    <string name="b_rus_code" translatable="false">-...</string>
+    <string name="b_rus_sing">dah-dit-dit-dit</string>
+    <string name="ve_rus_code" translatable="false">.-- </string>
+    <string name="ve_rus_sing">dit-dah-dah</string>
+    <string name="ge_rus_code" translatable="false">--.</string>
+    <string name="ge_rus_sing">dah-dah-dit</string>
+    <string name="d_rus_code" translatable="false">-.. </string>
+    <string name="d_rus_sing">dah-dit-dit</string>
+    <string name="e_rus_code" translatable="false">.</string>
+    <string name="je_rus_code" translatable="false">...-</string>
+    <string name="je_rus_sing">dit-dit-dit-dah</string>
+    <string name="ze_rus_code" translatable="false">--..</string>
+    <string name="ze_rus_sing">dah-dah-dit-dit</string>
+    <string name="i_rus_code" translatable="false">.. </string>
+    <string name="i_rus_sing">dit-dit</string>
+    <string name="ij_rus_code" translatable="false">.---</string>
+    <string name="ij_rus_sing">dit-dah-dah-dah</string>
+    <string name="k_rus_code" translatable="false">-.-</string>
+    <string name="k_rus_sing">dah-dit-dah</string>
+    <string name="el_rus_code" translatable="false">.-..</string>
+    <string name="el_rus_sing">dit-dah-dit-dit</string>
+    <string name="m_rus_code" translatable="false">--</string>
+    <string name="m_rus_sing">dah-dah</string>
+    <string name="n_rus_code" translatable="false">-.</string>
+    <string name="o_rus_code" translatable="false">---</string>
+    <string name="o_rus_sing">dah-dah-dah</string>
+    <string name="pe_rus_code" translatable="false">.--.</string>
+    <string name="pe_rus_sing">dit-dah-dah-dit</string>
+    <string name="er_rus_code" translatable="false">.-.</string>
+    <string name="er_rus_sing">dit-dah-dit</string>
+    <string name="es_rus_code" translatable="false">...</string>
+    <string name="es_rus_sing">dit-dit-dit</string>
+    <string name="t_rus_code" translatable="false">-</string>
+    <string name="t_rus_sing">dah</string>
+    <string name="y_rus_code" translatable="false">..-</string>
+    <string name="y_rus_sing">dit-dit-dah</string>
+    <string name="f_rus_code" translatable="false">..-.</string>
+    <string name="f_rus_sing">dit-dit-dah-dit</string>
+    <string name="x_rus_code" translatable="false">....</string>
+    <string name="x_rus_sing">dit-dit-dit-dit</string>
+    <string name="ce_rus_code" translatable="false">-.-.</string>
+    <string name="ce_rus_sing">dah-dit-dah-dit</string>
+    <string name="che_rus_code" translatable="false">---.</string>
+    <string name="che_rus_sing">dah-dah-dah-dit</string>
+    <string name="sha_rus_code" translatable="false">----</string>
+    <string name="sha_rus_sing">dah-dah-dah-dah</string>
+    <string name="shja_rus_code" translatable="false">--.-</string>
+    <string name="shja_rus_sing">dah-dah-dit-dah</string>
+    <string name="znaki_rus_code" translatable="false">-..-</string>
+    <string name="znaki_rus_sing">dah-dit-dit-dah</string>
+    <string name="ji_rus_code" translatable="false">-.--</string>
+    <string name="ji_rus_sing">dah-dit-dah-dah</string>
+    <string name="ee_rus_code" translatable="false">..-..</string>
+    <string name="ee_rus_sing">dit-dit-dah-dit-dit</string>
+    <string name="ju_rus_code" translatable="false">..--</string>
+    <string name="ju_rus_sing">dit-dit-dah-dah</string>
+    <string name="ja_rus_code" translatable="false">.-.-</string>
+    <string name="ja_rus_sing">dit-dah-dit-dah</string>
+    <string name="ruslet_a" translatable="false">а</string>
+    <string name="ruslet_b" translatable="false">б</string>
+    <string name="ruslet_v" translatable="false">в</string>
+    <string name="ruslet_g" translatable="false">г</string>
+    <string name="ruslet_d" translatable="false">д</string>
+    <string name="ruslet_e" translatable="false">е</string>
+    <string name="ruslet_je" translatable="false">ж</string>
+    <string name="ruslet_z" translatable="false">з</string>
+    <string name="ruslet_i" translatable="false">и</string>
+    <string name="ruslet_ij" translatable="false">й</string>
+    <string name="ruslet_k" translatable="false">к</string>
+    <string name="ruslet_l" translatable="false">л</string>
+    <string name="ruslet_m" translatable="false">м</string>
+    <string name="ruslet_n" translatable="false">н</string>
+    <string name="ruslet_o" translatable="false">о</string>
+    <string name="ruslet_p" translatable="false">п</string>
+    <string name="ruslet_r" translatable="false">р</string>
+    <string name="ruslet_s" translatable="false">с</string>
+    <string name="ruslet_t" translatable="false">т</string>
+    <string name="ruslet_y" translatable="false">у</string>
+    <string name="ruslet_f" translatable="false">ф</string>
+    <string name="ruslet_x" translatable="false">х</string>
+    <string name="ruslet_ce" translatable="false">ц</string>
+    <string name="ruslet_che" translatable="false">ч</string>
+    <string name="ruslet_sha" translatable="false">ш</string>
+    <string name="ruslet_shja" translatable="false">щ</string>
+    <string name="ruslet_zhaktv" translatable="false">ъ</string>
+    <string name="ruslet_ji" translatable="false">ы</string>
+    <string name="ruslet_znakm" translatable="false">ь</string>
+    <string name="ruslet_ee" translatable="false">э</string>
+    <string name="ruslet_ju" translatable="false">ю</string>
+    <string name="ruslet_ja" translatable="false">я</string>
+    <string name="space" translatable="false">\u0020</string>
+    <string name="rus">Rus letters </string>
+    <string name="eng">Eng letters</string>
+    <string name="symb">Symbols</string>
+    <string name="whattotranslate">\u0020\u0020What do you want to encrypt?\u0020\u0020</string>
+    <string name="idontknow">\u0020\u0020I cannot encrypt this :(\u0020\u0020\u0020\u0020</string>
+    <string name="point">point</string>
+    <string name="tire">dash</string>
+    <string name="groupsquant">Quantity of groups</string>
+    <string name="timing">Delay behind symbols, sec</string>
+    <string name="groups_edges" translatable="false">1 - 15</string>
+    <string name="delay_edges" translatable="false">1 - 5</string>
+    <string name="edges_error">\u0020\u0020Out of edges\u0020\u0020</string>
+    <string name="language">Language</string>
+    <string name="ruslang">Ru</string>
+    <string name="englang">Eng</string>
+    <string name="prsent" translatable="false">%</string>
+    <string name="eng_alph_w_symbs" translatable="false">abcdefghijklmnopqrstuvwxyz1234567890-+=.,/!@;:?)&amp;+=_$</string>
+    <string name="eng_alph" translatable="false">abcdefghijklmnopqrstuvwxyz</string>
+    <string name="rus_alph_w_symbs" translatable="false">абвгдежзийклмнопрстуфхцчшщьыэюя1234567890-+=.,/!@;:?)&amp;+=_$</string>
+    <string name="rus_alph" translatable="false">абвгдежзийклмнопрстуфхцчшщьыэюя</string>
+    <string name="symbnumb">Symbols and numbers</string>
+    <string name="error_f">\u0020\u0020Some fields are empty\u0020\u0020</string>
+    <string name="where_answ">\u0020\u0020Where is your answer?\u0020\u0020</string>
+    <string name="yourMax">Your max score</string>
+    <string name="you_got">You got</string>
+    <string name="comma_sing">dit-dah-dit-dah-dit-dah</string>
+    <string name="comma_code" translatable="false">.-.-.-</string>
+    <string name="one" translatable="false">.----</string>
+    <string name="one_sing">dit-dah-dah-dah-dah</string>
+    <string name="two" translatable="false">..---</string>
+    <string name="two_sing">dit-dit-dah-dah-dah</string>
+    <string name="three" translatable="false">...--</string>
+    <string name="three_sing">dit-dit-dit-dah-dah-dah</string>
+    <string name="four" translatable="false">....-</string>
+    <string name="four_sing">dit-dit-dit-dit-dah</string>
+    <string name="five" translatable="false">.....</string>
+    <string name="five_sing">dit-dit-dit-dit-dit</string>
+    <string name="six" translatable="false">-....</string>
+    <string name="six_sing">dah-dit-dit-dit-dit</string>
+    <string name="seven" translatable="false">--...</string>
+    <string name="seven_sing">dah-dah-dit-dit-dit</string>
+    <string name="eight" translatable="false">---..</string>
+    <string name="eight_sing">dah-dah-dah-dit-dit</string>
+    <string name="nine" translatable="false">----.</string>
+    <string name="nine_sing">dah-dah-dah-dah-dit</string>
+    <string name="zero" translatable="false">-----</string>
+    <string name="zero_sing">dah-dah-dah-dah-dah</string>
+    <string name="point_code" translatable="false">......</string>
+    <string name="point_sing">dit-dit-dit-dit-dit-dit</string>
+    <string name="pointcomma_code" translatable="false">-.-.-.</string>
+    <string name="pointcomma_sing">dah-dit-dah-dit-dah-dit</string>
+    <string name="doublepoint_code" translatable="false">---...</string>
+    <string name="doublepoint_sing">dah-dah-dah-dit-dit-dit</string>
+    <string name="questzn_code" translatable="false">..--..</string>
+    <string name="questzn_sing">dit-dit-dah-dah-dit-dit</string>
+    <string name="brackets_code" translatable="false">-.--.-</string>
+    <string name="brackets_sing">dah-dit-dah-dah-dit-dah</string>
+    <string name="vosklzn_code" translatable="false">--..--</string>
+    <string name="vosklzn_sing">dah-dah-dit-dit-dah-dah</string>
+    <string name="tire_code" translatable="false">-....-</string>
+    <string name="tire_sing">dah-dit-dit-dit-dit-dah</string>
+    <string name="realslash_code" translatable="false">-..-.</string>
+    <string name="realslash_sing">dah-dit-dit-dah-dit</string>
+    <string name="translate">Translate!</string>
+    <string name="alphabet">ALPHABET</string>
+    <string name="makecode">ENCRYPT</string>
+    <string name="totrain">TRAINING</string>
+    <string name="tokey">KEY</string>
+    <string name="toexit">EXIT</string>
+    <string name="isSound">Sounds</string>
+    <string name="slash" translatable="false">/</string>
+    <string name="exclam_point" translatable="false">!</string>
+    <string name="bracket" translatable="false">)</string>
+    <string name="quest_mark" translatable="false">#x3F</string>
+    <string name="double_point" translatable="false">:</string>
+    <string name="pointcomma" translatable="false">;</string>
+    <string name="comma" translatable="false">,</string>
+    <string name="point_mark" translatable="false">.</string>
+    <string name="zero_mark" translatable="false">0</string>
+    <string name="nine_mark" translatable="false">9</string>
+    <string name="eight_m" translatable="false">8</string>
+    <string name="seven_m" translatable="false">7</string>
+    <string name="six_m" translatable="false">6</string>
+    <string name="five_m" translatable="false">5</string>
+    <string name="four_m" translatable="false">4</string>
+    <string name="three_m" translatable="false">3</string>
+    <string name="two_m" translatable="false">2</string>
+    <string name="one_m" translatable="false">1</string>
+    <string name="q" translatable="false">q</string>
+    <string name="eng_c" translatable="false">c</string>
+    <string name="h" translatable="false">h</string>
+    <string name="f" translatable="false">f</string>
+    <string name="u" translatable="false">u</string>
+    <string name="y" translatable="false">y</string>
+    <string name="t" translatable="false">t</string>
+    <string name="s" translatable="false">s</string>
+    <string name="r" translatable="false">r</string>
+    <string name="p" translatable="false">p</string>
+    <string name="o" translatable="false">o</string>
+    <string name="n" translatable="false">n</string>
+    <string name="m" translatable="false">m</string>
+    <string name="l" translatable="false">l</string>
+    <string name="k" translatable="false">k</string>
+    <string name="j" translatable="false">j</string>
+    <string name="i" translatable="false">i</string>
+    <string name="z" translatable="false">z</string>
+    <string name="v" translatable="false">v</string>
+    <string name="e" translatable="false">e</string>
+    <string name="d" translatable="false">d</string>
+    <string name="g" translatable="false">g</string>
+    <string name="w" translatable="false">w</string>
+    <string name="b" translatable="false">b</string>
+    <string name="a" translatable="false">a</string>
+    <string name="allsymbols" translatable="false">abcdefghijklmnopqrstuvwxyzабвгдежзийклмнопрстуфхцчшщьыэюя1234567890-+=.,"'/!@;:?)&amp;+=_$</string>
+    <string name="e_rus_sing">dit</string>
+    <string name="kavychki_code" translatable="false">.-..-.</string>
+    <string name="exclam_code" translatable="false">--..--</string>
+    <string name="at_code" translatable="false">.--.-.</string>
+    <string name="at_sing">dit-dah-dah-dit-dah-dit</string>
+    <string name="ampersand_code" translatable="false">.-...</string>
+    <string name="ampersand_sing">dit-dah-dit-dit-dit</string>
+    <string name="plus_code" translatable="false">.-.-.</string>
+    <string name="plus_sing">dit-dah-dit-dah-dit</string>
+    <string name="doubledash" translatable="false">-...-</string>
+    <string name="doubledash_sing">dah-dit-dit-dit-dah</string>
+    <string name="underscore_code" translatable="false">..--.-</string>
+    <string name="underscore_sing">dit-dit-dah-dah-dit-dah</string>
+    <string name="dollar_code" translatable="false">...-..-</string>
+    <string name="dollar_sing">dit-dit-dit-dah-dit-dit-dah</string>
+    <string name="r_code" translatable="false">.-.</string>
+    <string name="speech_recognize_not_support">Speech recognizing is not supported on your device :(</string>
+    <string name="n_rus_sing">dah-dit</string>
+    <string name="send">Send via email</string>
+    <string name="morzeWithWorze">Learning Morze with Worze</string>
+    <string name="mt_subj" translatable="false">mailto:?subject=</string>
+    <string name="amp_body" translatable="false">&amp;body=</string>
+    <string name="i_encrypt">\u0020 - I encrypted this to Morse code with Worse app! Try it too!</string>
+    <string name="i_decrypt">\u0020 - I decrypted it from Morse code with Worze app! Try it too!</string>
+    <string name="tips">TIPS</string>
+    <string name="tip1">Tip 1: use one slash behind two letters when you write its codes</string>
+    <string name="tip2">Tip 2: use two slashes for whitespace behind words</string>
+    <string name="tip3">Tip 3: if you want to write words with your voice, press a microphone icon(switch on the Interner before)</string>
+    <string name="tip4">Tip 4: press note image to listen for a sound encode</string>
+    <string name="tip5">Tip 5: press the cogwheel image to send an email with your encrypting or to change crypting mode</string>
+    <string name="tip6">Tip 6: shake your device to clean any text field (if your device have an accelerometer)</string>
+    <string name="tip1train">Tip 1: group means a sequence of 5 symbols. Radiomen always use groups to send a message.</string>
+    <string name="tip2train">Tip 2: press the dynamic image to start playing groups</string>
+    <string name="tip3train">Tip 3: if you want, you may use whitespaces and UpperCase in your answer, it does not matter.</string>
+    <string name="endtips">Any questions? This is my email:</string>
+    <string name="mymail" translatable="false">k.dukhnay@gmail.com</string>
+    <string name="worzeQuest">Question about Worze app</string>
+    <string name="ihaveaquest">Hi! I have a question about your app Worze!</string>
+    <string name="translate_anything">At first you should encode or decode something</string>
+    <string name="accel_lost">Accelerometer was lost :(</string>
+
+</resources>

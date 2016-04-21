@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/back_mainmenu">
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="230dp"
+        android:id="@+id/rl"
+        android:gravity="center_horizontal"
+        android:background="#9b04600e"
+        android:layout_above="@+id/alphabet_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/hallo"
+            android:id="@+id/textView"
+            android:textColor="#010200"
+            android:textSize="75sp"
+            android:gravity="center"
+            android:typeface="sans"
+            android:theme="@style/Base.AlertDialog.AppCompat.Light"
+           />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="115dp"
+            android:background="@android:color/transparent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/player_name"
+            android:id="@+id/name_tv"
+            android:clickable="true"
+            android:textColor="#010100"
+            android:gravity="center"
+            android:textSize="75sp"
+            android:typeface="sans"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+   <!-- -->
+    <Button
+        android:background="@drawable/sel_btn_alphabet"
+        android:layout_width="390dp"
+        android:id="@+id/alphabet_btn"
+        android:layout_height="100dp"
+        android:text="@string/alphabet"
+        android:textSize="45sp"
+        android:layout_above="@+id/code_btn"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:background="@drawable/sel_btn_code"
+        android:layout_width="390dp"
+        android:layout_height="100dp"
+        android:text="@string/makecode"
+        android:id="@+id/code_btn"
+        android:textSize="45sp"
+        android:layout_above="@+id/train_btn"
+        android:layout_alignLeft="@+id/alphabet_btn"
+        android:layout_alignStart="@+id/alphabet_btn" />
+
+    <Button
+        android:background="@drawable/sel_btn_train"
+        android:layout_width="390dp"
+        android:layout_height="100dp"
+        android:text="@string/totrain"
+        android:id="@+id/train_btn"
+        android:textSize="45sp"
+        android:layout_above="@+id/tips_btn"
+        android:layout_alignLeft="@+id/code_btn"
+        android:layout_alignStart="@+id/code_btn" />
+
+    <Button
+        android:background="@drawable/sel_btn_key"
+        android:layout_width="390dp"
+        android:layout_height="100dp"
+        android:text="@string/tips"
+        android:id="@+id/tips_btn"
+        android:textSize="45sp"
+        android:layout_above="@+id/exit_btn"
+        android:layout_alignLeft="@+id/train_btn"
+        android:layout_alignStart="@+id/train_btn" />
+
+    <Button
+        android:background="@drawable/sel_btn_exit"
+        android:layout_width="390dp"
+        android:layout_height="100dp"
+        android:text="@string/toexit"
+        android:id="@+id/exit_btn"
+        android:textSize="45sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/tips_btn"
+        android:layout_alignStart="@+id/tips_btn"
+        android:layout_marginBottom="50dp" />
+
+</RelativeLayout>
