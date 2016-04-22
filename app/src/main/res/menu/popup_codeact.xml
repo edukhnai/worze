@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <group android:id="@+id/items">
+        <item
+            android:id="@+id/tocode"
+            android:title="@string/tocode" />
+        <item
+            android:id="@+id/todecoderus"
+            android:title="@string/todecoderus" />
+        <item
+            android:id="@+id/todecodeeng"
+            android:title="@string/todecodeeng" />
+        <item
+            android:id="@+id/tosend"
+            android:title="@string/send" />
+    </group>
 </menu>

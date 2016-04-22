@@ -1,8 +1,10 @@
 package com.katedukhnay.worze;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.media.SoundPool;
 import android.util.Log;
+
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +23,7 @@ public class MakeSounds {
     static HashMap<Character, Integer> soundMap;
 
     static{
-        soundMap = new HashMap<Character,Integer>();
+        soundMap = new HashMap<>();
         Log.d("myTags", "soundMap создался");
     }
 
@@ -41,6 +43,9 @@ public class MakeSounds {
 
 
     public static void playSound(char ch, SoundPool sp) {
+        if (sp == null) {
+            sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        }
         sp.play(soundMap.get(ch), 1, 1, 1, 0, 1f);
         Log.d("myTags", "sp.play сработал");
     }
