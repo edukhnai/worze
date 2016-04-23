@@ -7,13 +7,13 @@
 
         <TextView
             android:layout_width="200dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/groupsquant"
             android:id="@+id/textView2"
             android:gravity="center_vertical|center_horizontal"
             android:layout_gravity="center_vertical"
-            android:textSize="30sp"
+            android:textSize="25sp"
             android:layout_marginLeft="24dp"
             android:layout_marginStart="24dp"
             android:layout_alignParentTop="true"
@@ -23,7 +23,7 @@
 
         <EditText
             android:layout_width="100dp"
-            android:layout_height="80dp"
+            android:layout_height="70dp"
             android:inputType="number"
             android:ems="10"
             android:maxLength="3"
@@ -36,20 +36,20 @@
 
     <TextView
         android:layout_width="200dp"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/timing"
         android:id="@+id/textView4"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center_vertical"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:layout_alignTop="@+id/symbolDelay"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />
 
     <EditText
         android:layout_width="100dp"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:inputType="numberDecimal"
         android:ems="10"
         android:maxLength="3"
@@ -62,7 +62,7 @@
         android:layout_marginTop="17dp" />
 
     <Button
-        android:layout_width="200dp"
+        android:layout_width="230dp"
         android:layout_height="70dp"
         android:id="@+id/readyToPlay"
         android:text="@string/ready"
@@ -70,7 +70,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
-        android:textSize="25sp" />
+        android:textSize="27sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
         android:id="@+id/lang"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center_vertical"
-        android:textSize="35sp"
+        android:textSize="30sp"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/textView4"
         android:layout_alignStart="@+id/textView4" />
@@ -125,25 +125,25 @@
 
     <TextView
         android:layout_width="200dp"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/symbnumb"
         android:id="@+id/symbnumb"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center_vertical"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:layout_alignTop="@+id/symbCheck"
         android:layout_alignLeft="@+id/lang"
         android:layout_alignStart="@+id/lang" />
 
     <CheckBox
         android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="70dp"
         android:id="@+id/symbCheck"
         android:gravity="center_vertical|center_horizontal"
         android:textSize="60sp"
         android:button="@drawable/sel_check"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="52dp"
         android:layout_below="@+id/chooselang"
         android:layout_alignRight="@+id/chooselang"
         android:layout_alignEnd="@+id/chooselang" />

@@ -59,6 +59,58 @@ public class CodeActivity extends AppCompatActivity {
      */
     SensorEventListener mylistener;
     /**
+     * Показания акселерометра
+     */
+    private float mAccel;
+    /**
+     * Текущие показания акселерометра
+     */
+    private float mAccelCurrent;
+    /**
+     * Последние показания акселерометра
+     */
+    private float mAccelLast;
+    /**
+     * Менеджер сенсоров
+     */
+    private SensorManager sensorManager;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState == null) {
+            setContentView(R.layout.code);
+        }
+        context = this.getApplicationContext();
+        ws = WorzeSingleton.getInstance(context);
+        textabove = (EditText) findViewById(R.id.textabove);
+        textbelow = (TextView) findViewById(R.id.textbelow);
+        sounds_btn = (Button) findViewById(R.id.sounds_btn);
+        translate_btn = (Button) findViewById(R.id.translate_btn);
+        shest_btn = (Button) findViewById(R.id.shest_btn);
+        speech_btn = (Button) findViewById(R.id.speech_btn);
+        speech_btn.setOnClickListener(this.listener2);
+        sounds_btn.setOnClickListener(this.listener2);
+        shest_btn.setOnClickListener(this.listener2);
+        translate_btn.setOnClickListener(this.listener2);
+        context = this;
+        mAccel = 0.00f;
+        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mAccelLast = SensorManager.GRAVITY_EARTH;
+        enableAccelerometerListening();
+        mylistener = new CleanSensorEventListener();
+        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                MakeSounds.loadSounds(sp, context);
+            }
+        };
+        thread.start();
+    }
+
+
+    /**
      * Слушатель нажатий на кнопки
      */
     View.OnClickListener listener2 = new View.OnClickListener() {
@@ -136,20 +188,23 @@ public class CodeActivity extends AppCompatActivity {
                                     if (textbelow.getText().toString().equals("")) {
                                         ws.makeToast(context, getString(R.string.translate_anything), R.drawable.toast_red);
                                     } else {
+                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                                        if (intent.resolveActivity(getPackageManager()) != null) {
                                         String body = textbelow.getText().toString();
                                         if (ws.getConverting() == 0) {
                                             body += getResources().getString(R.string.i_encrypt);
                                         } else {
                                             body += getResources().getString(R.string.i_decrypt);
                                         }
-                                        Intent intent = new Intent(Intent.ACTION_VIEW);
+
                                         Uri data = Uri.parse(getResources().getString(R.string.mt_subj) +
                                                 getResources().getString(R.string.morzeWithWorze) +
                                                 getResources().getString(R.string.amp_body) + body);
                                         intent.setData(data);
                                         startActivity(intent);
                                     }
-
+                                    else  ws.makeToast(context, getString(R.string.smth_wrong), R.drawable.toast_red);
+                            }
                                     return true;
                                 default:
                                     return false;
@@ -188,56 +243,6 @@ public class CodeActivity extends AppCompatActivity {
 
         }
     };
-    /**
-     * Показания акселерометра
-     */
-    private float mAccel;
-    /**
-     * Текущие показания акселерометра
-     */
-    private float mAccelCurrent;
-    /**
-     * Последние показания акселерометра
-     */
-    private float mAccelLast;
-    /**
-     * Менеджер сенсоров
-     */
-    private SensorManager sensorManager;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (savedInstanceState == null) {
-            setContentView(R.layout.code);
-        }
-        context = this.getApplicationContext();
-        ws = WorzeSingleton.getInstance(context);
-        textabove = (EditText) findViewById(R.id.textabove);
-        textbelow = (TextView) findViewById(R.id.textbelow);
-        sounds_btn = (Button) findViewById(R.id.sounds_btn);
-        translate_btn = (Button) findViewById(R.id.translate_btn);
-        shest_btn = (Button) findViewById(R.id.shest_btn);
-        speech_btn = (Button) findViewById(R.id.speech_btn);
-        speech_btn.setOnClickListener(listener2);
-        sounds_btn.setOnClickListener(this.listener2);
-        shest_btn.setOnClickListener(this.listener2);
-        translate_btn.setOnClickListener(this.listener2);
-        context = this;
-        mAccel = 0.00f;
-        mAccelCurrent = SensorManager.GRAVITY_EARTH;
-        mAccelLast = SensorManager.GRAVITY_EARTH;
-        enableAccelerometerListening();
-        mylistener = new CleanSensorEventListener();
-        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                MakeSounds.loadSounds(sp, context);
-            }
-        };
-        thread.start();
-    }
 
     /**
      * Получение результата работы распознавания речи

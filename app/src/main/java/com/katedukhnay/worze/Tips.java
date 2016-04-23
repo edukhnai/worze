@@ -25,11 +25,12 @@ myMail.setOnClickListener(new View.OnClickListener(){
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(Intent.ACTION_VIEW);
+        if (intent.resolveActivity(getPackageManager()) != null) {
         Uri data = Uri.parse(getResources().getString(R.string.mt_subj) +
                 getResources().getString(R.string.morzeWithWorze) +
                 getResources().getString(R.string.amp_body) + getResources().getString(R.string.ihaveaquest));
         intent.setData(data);
-        startActivity(intent);
+        startActivity(intent);}
     }});
 }
     /**При нажатии на кнопку Back пользователь попадает в главное меню*/

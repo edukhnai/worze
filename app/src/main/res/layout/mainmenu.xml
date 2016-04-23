@@ -6,51 +6,50 @@
 
     <RelativeLayout
         android:id="@+id/rl"
-        android:layout_width="330dp"
-        android:layout_height="250dp"
-        android:layout_above="@+id/alphabet_btn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="280dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="34dp"
         android:background="#9b04600e"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
 
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:gravity="center"
+            android:layout_height="75dp"
+            android:gravity="center_horizontal|bottom"
             android:text="@string/hallo"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010200"
-            android:textSize="45sp"
+            android:textSize="50sp"
             android:theme="@style/Base.AlertDialog.AppCompat.Light"
             android:typeface="sans"
-           />
+            android:textIsSelectable="false" />
 
         <TextView
             android:id="@+id/name_tv"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="75dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:background="@android:color/transparent"
             android:clickable="true"
-            android:gravity="center"
+            android:gravity="center_horizontal|top"
             android:text="@string/player_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010100"
-            android:textSize="45sp"
+            android:textSize="50sp"
             android:typeface="sans" />
     </RelativeLayout>
 
    <!-- -->
     <Button
         android:id="@+id/alphabet_btn"
-        android:layout_width="290dp"
-        android:layout_height="65dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/code_btn"
         android:layout_alignLeft="@+id/code_btn"
         android:layout_alignStart="@+id/code_btn"
@@ -60,8 +59,8 @@
 
     <Button
         android:id="@+id/code_btn"
-        android:layout_width="290dp"
-        android:layout_height="65dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/train_btn"
         android:layout_centerHorizontal="true"
         android:background="@drawable/sel_btn_code"
@@ -70,8 +69,8 @@
 
     <Button
         android:id="@+id/train_btn"
-        android:layout_width="290dp"
-        android:layout_height="65dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/tips_btn"
         android:layout_alignLeft="@+id/tips_btn"
         android:layout_alignStart="@+id/tips_btn"
@@ -81,8 +80,8 @@
 
     <Button
         android:id="@+id/tips_btn"
-        android:layout_width="290dp"
-        android:layout_height="65dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:layout_above="@+id/exit_btn"
         android:layout_alignLeft="@+id/exit_btn"
         android:layout_alignStart="@+id/exit_btn"
@@ -92,11 +91,11 @@
 
     <Button
         android:id="@+id/exit_btn"
-        android:layout_width="290dp"
-        android:layout_height="65dp"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/sel_btn_exit"
         android:text="@string/toexit"
         android:textSize="35sp" />

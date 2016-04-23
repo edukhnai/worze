@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back_lion">
+
+    <EditText
+        android:id="@+id/textabove"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="#9bffffff"
+        android:gravity="top"
+        android:inputType="textNoSuggestions"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:textSize="40sp"
+        android:typeface="sans"
+        android:layout_above="@+id/relativeLayout" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@+id/textbelow"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+    <Button
+        android:id="@+id/shest_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/sounds_btn"
+        android:background="@drawable/sel_btn_shesterenka"
+        android:clickable="true"
+        android:contentDescription="@+id/shest_btn" />
+        <Button
+            android:id="@+id/speech_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@mipmap/speech_btn"
+            android:clickable="true"
+            android:contentDescription="@+id/speech_btn"
+            android:layout_alignTop="@+id/translate_btn"
+            android:layout_toLeftOf="@+id/translate_btn"
+            android:layout_toStartOf="@+id/translate_btn"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp" />
+    <Button
+        android:id="@+id/sounds_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@mipmap/sounds_btn"
+        android:textColor="#c7ffffff"
+        android:textSize="25sp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_alignTop="@+id/speech_btn"
+        android:layout_toRightOf="@+id/shest_btn"
+        android:layout_toEndOf="@+id/shest_btn" />
+
+        <Button
+            android:id="@+id/translate_btn"
+            android:layout_width="260dp"
+            android:layout_height="80dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/sel_btn_translate"
+            android:text="@string/translate"
+            android:textSize="34sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textbelow"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="#9bffffff"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:textIsSelectable="true"
+        android:textSize="40sp"
+        android:typeface="sans" />
+</RelativeLayout>

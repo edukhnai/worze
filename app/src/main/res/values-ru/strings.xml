@@ -56,8 +56,8 @@
     <string name="timing">Задержка времени между символами, с</string>
     <string name="edges_error">\u0020\u0020Ты вышел за пределы допустимых значений\u0020\u0020</string>
     <string name="language">Язык</string>
-    <string name="ruslang">Русский</string>
-    <string name="englang">Англ.</string>
+    <string name="ruslang">Рус</string>
+    <string name="englang">Англ</string>
     <string name="symbnumb">\u0020Символы и числа\u0020</string>
     <string name="error_f">\u0020\u0020Заполнены не все поля\u0020\u0020</string>
     <string name="where_answ">  Где же твой ответ?  </string>
@@ -104,16 +104,17 @@
     <string name="tips">СОВЕТЫ</string>
     <string name="tip1">Совет 1: используй одну косую черту, чтобы разделять зашифровки символов</string>
     <string name="tip2">Совет 2: используй две косые черты для пробела между словами</string>
-    <string name="tip3">Cовет 3: для использования голосового ввода нажми на иконку микрофона(но перред этим включи Интернет)</string>
+    <string name="tip3">Cовет 3: для использования голосового ввода нажми на иконку микрофона(но перед этим включи Интернет)</string>
     <string name="tip4">Совет 4: нажми на картинку ноты, чтобы услышать звуковую зашифровку слов</string>
     <string name="tip5">Совет 5: нажми на картинку шестеренки, чтобы поделиться по почте своими зашифровками или сменить вид шифровки</string>
     <string name="tip1train">Совет 1: группа - это последовательность из 5 симолов. Радисты передают все сообщения группами.</string>
-    <string name="tip2train">Совет 2:нажми на изображение динамика, чтобы начать проигрывание групп</string>
+    <string name="tip2train">Совет 2: нажми на изображение динамика, чтобы начать проигрывание групп</string>
     <string name="endtips">Остались вопросы? Вот моя почта:</string>
     <string name="worzeQuest">Вопрос о приложении Worze</string>
     <string name="ihaveaquest">Привет! У меня есть вопрос по поводу твоего приложения!</string>
     <string name="translate_anything">Сначала зашифруй или расшифруй что-нибудь</string>
     <string name="accel_lost">Акселерометр куда-то потерялся :(</string>
     <string name="tip3train">Совет 3: ты можешь использовать в своем ответе пробелы и верхний регистр, это не имеет значения.</string>
-    <string name="tip6">Совет 6:встряхни мобильное устройство, чтобы очистить любое текстовое поле</string>
+    <string name="tip6">Совет 6: встряхни мобильное устройство, чтобы очистить любое текстовое поле</string>
+    <string name="smth_wrong">Что-то пошло не так :(</string>
 </resources>

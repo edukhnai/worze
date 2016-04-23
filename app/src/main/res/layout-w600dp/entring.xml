@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/entringback">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/splashprogbar"
+        android:layout_width="470sp"
+        android:layout_height="50sp"
+        android:id="@+id/pbView"
+        android:max="100"
+        android:indeterminate="false"
+        android:layout_marginBottom="42dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="220sp"
+        android:layout_height="50sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/percent"
+        android:id="@+id/percent"
+        android:gravity="center_vertical"
+        android:textColor="#cddb9d"
+        android:textSize="37sp"
+        android:layout_below="@+id/splsh"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp" />
+    <TextView
+        android:layout_width="240sp"
+        android:layout_height="50sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/loading"
+        android:id="@+id/textView3"
+        android:gravity="center_vertical"
+        android:textColor="#cddb9d"
+        android:textSize="37sp"
+        android:layout_marginLeft="95dp"
+        android:layout_marginStart="95dp"
+        android:layout_below="@+id/splsh"
+        android:layout_alignLeft="@+id/pbView"
+        android:layout_alignStart="@+id/pbView" />
+
+    <ImageView
+        android:layout_width="470dp"
+        android:layout_height="600dp"
+        android:id="@+id/splsh"
+        android:src="@mipmap/mrworze"
+        android:layout_above="@+id/pbView"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@mipmap/back_one">
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="@string/you_got"
+        android:id="@+id/textView7"
+        android:layout_marginTop="90dp"
+        android:textSize="60sp"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/percent"
+        android:id="@+id/finalPersents"
+        android:textSize="60sp"
+        android:layout_below="@+id/textView7"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
+
+    <Button
+        android:layout_width="370dp"
+        android:layout_height="100dp"
+        android:text="@string/to_main"
+        android:id="@+id/toMenu"
+        android:layout_marginBottom="94dp"
+        android:background="@drawable/sel_btn_tomain"
+        android:textSize="40sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:text="@string/yourMax"
+        android:id="@+id/textView8"
+        android:textSize="60sp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/maxPercents"
+        android:layout_alignStart="@+id/maxPercents" />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/percent"
+        android:id="@+id/maxPercents"
+        android:textSize="60sp"
+        android:gravity="center"
+        android:layout_below="@+id/textView8"
+        android:layout_alignLeft="@+id/finalPersents"
+        android:layout_alignStart="@+id/finalPersents" />
+</RelativeLayout>

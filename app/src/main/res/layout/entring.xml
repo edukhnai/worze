@@ -7,8 +7,8 @@
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/splashprogbar"
-        android:layout_width="230sp"
-        android:layout_height="25sp"
+        android:layout_width="270sp"
+        android:layout_height="30sp"
         android:id="@+id/pbView"
         android:max="100"
         android:indeterminate="false"
@@ -17,34 +17,35 @@
         android:layout_centerHorizontal="true" />
     <TextView
         android:layout_width="110sp"
-        android:layout_height="27sp"
+        android:layout_height="30sp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/percent"
         android:id="@+id/percent"
         android:gravity="center_vertical"
         android:textColor="#cddb9d"
-        android:layout_marginRight="31dp"
-        android:layout_marginEnd="31dp"
+        android:textSize="23sp"
         android:layout_alignTop="@+id/pbView"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="57dp"
+        android:layout_marginEnd="57dp" />
     <TextView
         android:layout_width="120sp"
-        android:layout_height="27sp"
+        android:layout_height="30sp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/loading"
         android:id="@+id/textView3"
         android:gravity="center_vertical"
         android:textColor="#cddb9d"
-        android:layout_marginRight="44dp"
-        android:layout_marginEnd="44dp"
-        android:layout_below="@+id/splsh"
-        android:layout_alignRight="@+id/pbView"
-        android:layout_alignEnd="@+id/pbView" />
+        android:textSize="23sp"
+        android:textIsSelectable="true"
+        android:layout_alignTop="@+id/pbView"
+        android:layout_toLeftOf="@+id/percent"
+        android:layout_toStartOf="@+id/percent" />
 
     <ImageView
-        android:layout_width="260dp"
-        android:layout_height="400dp"
+        android:layout_width="270dp"
+        android:layout_height="450dp"
         android:id="@+id/splsh"
         android:src="@mipmap/mrworze"
         android:layout_above="@+id/pbView"

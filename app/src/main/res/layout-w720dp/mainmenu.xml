@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back_mainmenu">
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="670dp"
+        android:layout_height="320dp"
+        android:layout_marginTop="84dp"
+        android:background="#9b04600e"
+        android:gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:gravity="center"
+            android:text="@string/hallo"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#010200"
+            android:textSize="105sp"
+            android:theme="@style/Base.AlertDialog.AppCompat.Light"
+            android:typeface="sans" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/player_name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#010100"
+            android:textSize="95sp"
+            android:typeface="sans" />
+    </RelativeLayout>
+
+   <!-- -->
+    <Button
+        android:id="@+id/alphabet_btn"
+        android:layout_width="580dp"
+        android:layout_height="135dp"
+        android:layout_above="@+id/code_btn"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/sel_btn_alphabet"
+        android:text="@string/alphabet"
+        android:textSize="75sp" />
+
+    <Button
+        android:id="@+id/code_btn"
+        android:layout_width="580dp"
+        android:layout_height="135dp"
+        android:layout_above="@+id/train_btn"
+        android:layout_alignLeft="@+id/alphabet_btn"
+        android:layout_alignStart="@+id/alphabet_btn"
+        android:background="@drawable/sel_btn_code"
+        android:text="@string/makecode"
+        android:textSize="75sp" />
+
+    <Button
+        android:id="@+id/train_btn"
+        android:layout_width="580dp"
+        android:layout_height="135dp"
+        android:layout_above="@+id/tips_btn"
+        android:layout_alignLeft="@+id/code_btn"
+        android:layout_alignStart="@+id/code_btn"
+        android:background="@drawable/sel_btn_train"
+        android:text="@string/totrain"
+        android:textSize="75sp" />
+
+    <Button
+        android:id="@+id/tips_btn"
+        android:layout_width="580dp"
+        android:layout_height="135dp"
+        android:layout_above="@+id/exit_btn"
+        android:layout_alignLeft="@+id/train_btn"
+        android:layout_alignStart="@+id/train_btn"
+        android:background="@drawable/sel_btn_key"
+        android:text="@string/tips"
+        android:textSize="75sp" />
+
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="580dp"
+        android:layout_height="135dp"
+        android:layout_alignLeft="@+id/tips_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/tips_btn"
+        android:layout_marginBottom="55dp"
+        android:background="@drawable/sel_btn_exit"
+        android:text="@string/toexit"
+        android:textSize="75sp" />
+
+</RelativeLayout>

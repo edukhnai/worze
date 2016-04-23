@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/back_two"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rus"
+        android:id="@+id/textView10"
+        android:textSize="55sp"
+        android:gravity="center_horizontal|fill_vertical"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="15dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/sel_btn_rightback"
+        android:id="@+id/toEngListFromRus"
+        android:layout_gravity="right"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/toEngListFromRus">
+
+      <ListView
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:id="@+id/listAlphabetRus"
+          android:background="#64ffffff" />
+
+    </LinearLayout>
+
+</RelativeLayout>

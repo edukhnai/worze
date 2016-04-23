@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/img"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
@@ -34,7 +34,7 @@
             android:gravity="center_vertical"
             android:text="@string/listsing"
             android:textColor="#4dbe7e"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textttl"
@@ -46,7 +46,7 @@
             android:gravity="center_vertical"
             android:text="@string/listcode"
             android:textColor="#4dbe7e"
-            android:textSize="22sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/text_code"
@@ -60,7 +60,7 @@
             android:text="@string/player_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#22a35a"
-            android:textSize="40sp" />
+            android:textSize="30sp" />
 
         <TextView
             android:id="@+id/text_sing"

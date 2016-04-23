@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@mipmap/back_to"
+    android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/groupsquant"
+            android:id="@+id/textView2"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_gravity="center_vertical"
+            android:textSize="28sp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="39dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingRight="10dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:maxLength="3"
+            android:id="@+id/groupAmount"
+            android:background="#64ffffff"
+            android:textSize="60sp"
+            android:layout_alignTop="@+id/textView2"
+            android:layout_alignLeft="@+id/symbolDelay"
+            android:layout_alignStart="@+id/symbolDelay"
+            android:layout_alignRight="@+id/symbolDelay"
+            android:layout_alignEnd="@+id/symbolDelay" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/timing"
+        android:id="@+id/textView4"
+        android:layout_gravity="center_vertical"
+        android:textSize="28sp"
+        android:layout_alignTop="@+id/symbolDelay"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignStart="@+id/textView2"
+        android:paddingBottom="10dp"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_alignEnd="@+id/textView2"
+        android:gravity="center_horizontal"
+        android:paddingTop="10dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:maxLength="3"
+        android:id="@+id/symbolDelay"
+        android:background="#64ffffff"
+        android:textSize="60sp"
+        android:layout_below="@+id/textView5"
+        android:layout_marginTop="17dp"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_alignRight="@+id/symbCheck"
+        android:layout_alignEnd="@+id/symbCheck" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/readyToPlay"
+        android:text="@string/ready"
+        android:background="@drawable/sel_btn_translate"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textSize="35sp"
+        android:paddingLeft="35dp"
+        android:paddingTop="15dp"
+        android:paddingRight="35dp"
+        android:paddingBottom="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/groups_edges"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/readyToPlay"
+        android:layout_toEndOf="@+id/readyToPlay" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/delay_edges"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/symbolDelay"
+        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignStart="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/language"
+        android:id="@+id/lang"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_vertical"
+        android:textSize="32sp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ruslang"
+        android:id="@+id/chooselang"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_vertical"
+        android:textSize="24sp"
+        android:background="#64ffffff"
+        android:padding="20dp"
+        android:layout_alignTop="@+id/lang"
+        android:layout_toRightOf="@+id/lang"
+        android:layout_toEndOf="@+id/lang" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/symbnumb"
+        android:id="@+id/symbnumb"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_gravity="center_vertical"
+        android:textSize="28sp"
+        android:paddingBottom="10dp"
+        android:layout_below="@+id/chooselang"
+        android:layout_alignLeft="@+id/lang"
+        android:layout_alignStart="@+id/lang"
+        android:layout_marginTop="29dp"
+        android:layout_alignRight="@+id/lang"
+        android:layout_alignEnd="@+id/lang" />
+
+    <CheckBox
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/symbCheck"
+        android:gravity="center_vertical|center_horizontal"
+        android:textSize="60sp"
+        android:button="@drawable/sel_check"
+        android:layout_alignTop="@+id/symbnumb"
+        android:layout_alignLeft="@+id/chooselang"
+        android:layout_alignStart="@+id/chooselang" />
+
+
+</RelativeLayout>

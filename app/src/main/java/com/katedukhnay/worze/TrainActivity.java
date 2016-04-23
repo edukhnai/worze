@@ -45,6 +45,30 @@ public class TrainActivity extends AppCompatActivity {
     /**
      * Слушатель нажатий на кнопки данной активности
      */
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.train_main);
+        ws = WorzeSingleton.getInstance(getApplicationContext());
+        context = this.getApplicationContext();
+        str = "";
+        train_et = (EditText) findViewById(R.id.train_et);
+        ready_train = (Button) findViewById(R.id.ready_train);
+        ready_train.setClickable(false);
+        ready_train.setOnClickListener(trainListener);
+        btnReady = (Button) findViewById(R.id.btnReady);
+        btnReady.setOnClickListener(trainListener);
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                MakeSounds.loadSounds(soundPool, context);
+            }
+        };
+        thread.start();
+    }
     View.OnClickListener trainListener = new View.OnClickListener() {
 
         @Override
@@ -72,31 +96,6 @@ public class TrainActivity extends AppCompatActivity {
             }
         }
     };
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_main);
-        ws = WorzeSingleton.getInstance(getApplicationContext());
-        context = this.getApplicationContext();
-        str = "";
-        train_et = (EditText) findViewById(R.id.train_et);
-        train_et.setSelection(0);
-        ready_train = (Button) findViewById(R.id.ready_train);
-        ready_train.setClickable(false);
-        ready_train.setOnClickListener(trainListener);
-        btnReady = (Button) findViewById(R.id.btnReady);
-        btnReady.setOnClickListener(trainListener);
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                MakeSounds.loadSounds(soundPool, context);
-            }
-        };
-        thread.start();
-    }
-
     /**
      * Метод, создающий массив произвольных символов в соответствии с предпочтениями пользователя, проигрывающий их кодировки
      * и сохраняющий правильную строку

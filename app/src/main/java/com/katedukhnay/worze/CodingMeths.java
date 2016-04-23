@@ -351,173 +351,206 @@ public class CodingMeths {
     public static String helpDecode(String s1, int lang) {
         String s_res = "";
         if (lang == 0) {
-            if (s1.equals(".-")) {
-                s_res += "а";
-            } else if (s1.equals("-...")) {
-                s_res += "б";
-            } else if (s1.equals(".--")) {
-                s_res += "в";
-            } else if (s_res.equals("--.")) {
-                s_res += "г";
-            } else if (s1.equals("-..")) {
-                s_res += "д";
-            } else if (s1.equals(".")) {
-                s_res += "е";
-            } else if (s1.equals("...-")) {
-                s_res += "ж";
-            } else if (s1.equals("--..")) {
-                s_res += "з";
-            } else if (s1.equals("..")) {
-                s_res += "и";
-            } else if (s1.equals(".---")) {
-                s_res += "й";
-            } else if (s1.equals("-.-")) {
-                s_res += "к";
-            } else if (s1.equals(".-..")) {
-                s_res += "л";
-            } else if (s1.equals("--")) {
-                s_res += "м";
-            } else if (s1.equals("-.")) {
-                s_res += "н";
-            } else if (s1.equals("---")) {
-                s_res += "о";
-            } else if (s1.equals(".--.")) {
-                s_res += "п";
-            } else if (s1.equals(".-.")) {
-                s_res += "р";
-            } else if (s1.equals("...")) {
-                s_res += "с";
-            } else if (s1.equals("-")) {
-                s_res += "т";
-            } else if (s1.equals("..-")) {
-                s_res += "у";
-            } else if (s1.equals("..-.")) {
-                s_res += "ф";
-            } else if (s1.equals("....")) {
-                s_res += "х";
-            } else if (s1.equals("-.-.")) {
-                s_res += "ц";
-            } else if (s1.equals("---.")) {
-                s_res += "ч";
-            } else if (s1.equals("----")) {
-                s_res += "ш";
-            } else if (s1.equals("--.-")) {
-                s_res += "щ";
-            } else if (s1.equals("-..-")) {
-                s_res += "ь";
-            } else if (s1.equals("-.--")) {
-                s_res += "ы";
-            } else if (s1.equals("..-..")) {
-                s_res += "э";
-            } else if (s1.equals("..--")) {
-                s_res += "ю";
-            } else if (s1.equals(".-.-")) {
-                s_res += "я";
+            switch (s1) {
+                case ".-":
+                    s_res += "а";
+                    break;
+                case "-...":
+                    s_res += "б";
+                    break;
+                case ".--":
+                    s_res += "в";
+                    break;
+                case "--.":
+                    s_res += "г";
+                    break;
+                case "-..":
+                    s_res += "д";
+                    break;
+                case ".":
+                    s_res += "е";
+                    break;
+                case "...-":
+                    s_res += "ж";
+                    break;
+                case "--..":
+                    s_res += "з";
+                    break;
+                case "..":
+                    s_res += "и";
+                    break;
+                case ".---":
+                    s_res += "й";
+                    break;
+                case "-.-":
+                    s_res += "к";
+                    break;
+                case ".-..":
+                    s_res += "л";
+                    break;
+                case "--":
+                    s_res += "м";
+                    break;
+                case "-.":
+                    s_res += "н";
+                    break;
+                case "---":
+                    s_res += "о";
+                    break;
+                case ".--.":
+                    s_res += "п";
+                    break;
+                case ".-.":
+                    s_res += "р";
+                    break;
+                case "...":
+                    s_res += "с";
+                    break;
+                case "-":
+                    s_res += "т";
+                    break;
+                case "..-":
+                    s_res += "у";
+                    break;
+                case "..-.":
+                    s_res += "ф";
+                    break;
+                case "....":
+                    s_res += "х";
+                    break;
+                case "-.-.":
+                    s_res += "ц";
+                    break;
+                case "---.":
+                    s_res += "ч";
+                    break;
+                case "----":
+                    s_res += "ш";
+                    break;
+                case "--.-":
+                    s_res += "щ";
+                    break;
+                case "-..-":
+                    s_res += "ь";
+                    break;
+                case "-.--":
+                    s_res += "ы";
+                    break;
+                case "..-..":
+                    s_res += "э";
+                    break;
+                case "..--":
+                    s_res += "ю";
+                    break;
+                case ".-.-":
+                    s_res += "я";
+                    break;
             }
         } else if (lang == 1) {
-            if (s1.equals(".-")) {
-                s_res += "a";
-            } else if (s1.equals("-...")) {
-                s_res += "b";
-            } else if (s1.equals(".--")) {
-                s_res += "w";
-            } else if (s_res.equals("--.")) {
-                s_res += "g";
-            } else if (s1.equals("-..")) {
-                s_res += "d";
-            } else if (s1.equals(".")) {
-                s_res += "e";
-            } else if (s1.equals("...-")) {
-                s_res += "v";
-            } else if (s1.equals("--..")) {
-                s_res += "z";
-            } else if (s1.equals("..")) {
-                s_res += "i";
-            } else if (s1.equals(".---")) {
-                s_res += "j";
-            } else if (s1.equals("-.-")) {
-                s_res += "k";
-            } else if (s1.equals(".-..")) {
-                s_res += "l";
-            } else if (s1.equals("--")) {
-                s_res += "m";
-            } else if (s1.equals("-.")) {
-                s_res += "n";
-            } else if (s1.equals("---")) {
-                s_res += "o";
-            } else if (s1.equals(".--.")) {
-                s_res += "p";
-            } else if (s1.equals(".-.")) {
-                s_res += "r";
-            } else if (s1.equals("...")) {
-                s_res += "s";
-            } else if (s1.equals("-")) {
-                s_res += "t";
-            } else if (s1.equals("..-")) {
-                s_res += "u";
-            } else if (s1.equals("..-.")) {
-                s_res += "f";
-            } else if (s1.equals("....")) {
-                s_res += "h";
-            } else if (s1.equals("-.-.")) {
-                s_res += "c";
-            } else if (s1.equals("--.-")) {
-                s_res += "q";
-            } else if (s1.equals("-..-")) {
-                s_res += "x";
-            } else if (s1.equals("-.--")) {
-                s_res += "y";
+            switch(s1){
+                case".-": s_res += "a";break;
+                case"-...":
+                s_res += "b";break;
+                case".--":
+                s_res += "w";break;
+                case"--.":
+                s_res += "g";break;
+                case"-..":
+                s_res += "d";break;
+                case".":
+                s_res += "e";break;
+                    case "...-":
+                s_res += "v";break;
+                case"--..":
+                s_res += "z";break;
+                case"..":
+                s_res += "i";break;
+                case".---":
+                s_res += "j";break;
+                case"-.-":
+                s_res += "k";break;
+                case".-..":
+                s_res += "l";break;
+                case"--":
+                s_res += "m";break;
+                case"-.":
+                s_res += "n";break;
+                case"---":
+                s_res += "o";break;
+                case".--.":
+                s_res += "p";break;
+                case".-.":
+                s_res += "r";break;
+                case"...":
+                s_res += "s";break;
+                case"-":
+                s_res += "t";break;
+                case"..-":
+                s_res += "u";break;
+                case"..-.":
+                s_res += "f";break;
+                case"....":
+                s_res += "h";break;
+                case"-.-.":
+                s_res += "c";break;
+                case"--.-":
+                s_res += "q";break;
+                case"-..-":
+                s_res += "x";break;
+                case"-.--":
+                s_res += "y";break;
             }
         }
 
-        if (s1.equals("......")) {
-            s_res += ".";
-        } else if (s1.equals(".-.-.-")) {
-            s_res += ",";
-        } else if (s1.equals("..--..")) {
-            s_res += "?";
-        } else if (s1.equals("--..--")) {
-            s_res += "!";
-        } else if (s1.equals("---...")) {
-            s_res += ":";
-        } else if (s1.equals("-.-.-.")) {
-            s_res += ";";
-        } else if (s1.equals("-.--.-")) {
-            s_res += ")";
-        } else if (s1.equals("-..-.")) {
-            s_res += "/";
-        } else if (s1.equals(".--.-.")) {
-            s_res += "@";
-        } else if (s1.equals(".-...")) {
-            s_res += "&";
-        } else if (s1.equals(".-.-.")) {
-            s_res += "+";
-        } else if (s1.equals("-...-")) {
-            s_res += "=";
-        } else if (s1.equals("..--.-")) {
-            s_res += "_";
-        } else if (s1.equals("...-..-")) {
-            s_res += "$";
-        } else if (s1.equals(".----")) {
-            s_res += "1";
-        } else if (s1.equals("..---")) {
-            s_res += "2";
-        } else if (s1.equals("...--")) {
-            s_res += "3";
-        } else if (s1.equals("....-")) {
-            s_res += "4";
-        } else if (s1.equals(".....")) {
-            s_res += "5";
-        } else if (s1.equals("-....")) {
-            s_res += "6";
-        } else if (s1.equals("--...")) {
-            s_res += "7";
-        } else if (s1.equals("---..")) {
-            s_res += "8";
-        } else if (s1.equals("----.")) {
-            s_res += "9";
-        } else if (s1.equals("-----")) {
-            s_res += "0";
+        switch(s1){
+            case "......":
+            s_res += ".";break;
+            case".-.-.-":
+            s_res += ",";break;
+            case"..--..":
+            s_res += "?";break;
+            case"--..--":
+            s_res += "!";break;
+            case"---...":
+            s_res += ":";break;
+            case"-.-.-.":
+            s_res += ";";break;
+            case"-.--.-":
+            s_res += ")";break;
+            case"-..-.":
+            s_res += "/";break;
+            case".--.-.":
+            s_res += "@";break;
+            case".-...":
+            s_res += "&";break;
+            case".-.-.":
+            s_res += "+";break;
+            case"-...-":
+            s_res += "=";break;
+            case"..--.-":
+            s_res += "_";break;
+            case "...-..-":
+            s_res += "$";break;
+            case".----":
+            s_res += "1";break;
+            case"..---":
+            s_res += "2";break;
+            case"...--":
+            s_res += "3";break;
+            case"....-":
+            s_res += "4";break;
+            case".....":
+            s_res += "5";break;
+            case"-....":
+            s_res += "6";break;
+            case"--...":
+            s_res += "7";break;
+            case"---..":
+            s_res += "8";break;
+            case"----.":
+            s_res += "9";break;
+            case"-----":
+            s_res += "0";break;
         }
         return s_res;
     }

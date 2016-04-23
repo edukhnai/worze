@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/entringback">
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/splashprogbar"
+        android:layout_width="350sp"
+        android:layout_height="40sp"
+        android:id="@+id/pbView"
+        android:max="100"
+        android:indeterminate="false"
+        android:layout_below="@+id/splsh"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp" />
+    <TextView
+        android:layout_width="110sp"
+        android:layout_height="40sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/percent"
+        android:id="@+id/percent"
+        android:gravity="center_vertical"
+        android:textColor="#cddb9d"
+        android:textSize="25sp"
+        android:layout_alignTop="@+id/pbView"
+        android:layout_alignRight="@+id/pbView"
+        android:layout_alignEnd="@+id/pbView"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp" />
+    <TextView
+        android:layout_width="150sp"
+        android:layout_height="40sp"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/loading"
+        android:id="@+id/textView3"
+        android:gravity="center_vertical"
+        android:textColor="#cddb9d"
+        android:textSize="25sp"
+        android:layout_alignTop="@+id/pbView"
+        android:layout_toLeftOf="@+id/percent"
+        android:layout_toStartOf="@+id/percent"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp" />
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:id="@+id/splsh"
+        android:src="@mipmap/mrworze"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/pbView"
+        android:layout_alignStart="@+id/pbView" />
+</RelativeLayout>

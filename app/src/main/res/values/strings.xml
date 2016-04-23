@@ -133,7 +133,7 @@
     <string name="symbnumb">Symbols and numbers</string>
     <string name="error_f">\u0020\u0020Some fields are empty\u0020\u0020</string>
     <string name="where_answ">\u0020\u0020Where is your answer?\u0020\u0020</string>
-    <string name="yourMax">Your max score</string>
+    <string name="yourMax">Your max </string>
     <string name="you_got">You got</string>
     <string name="comma_sing">dit-dah-dit-dah-dit-dah</string>
     <string name="comma_code" translatable="false">.-.-.-</string>
@@ -264,5 +264,6 @@
     <string name="ihaveaquest">Hi! I have a question about your app Worze!</string>
     <string name="translate_anything">At first you should encode or decode something</string>
     <string name="accel_lost">Accelerometer was lost :(</string>
+    <string name="smth_wrong">Something was wrong :(</string>
 
 </resources>

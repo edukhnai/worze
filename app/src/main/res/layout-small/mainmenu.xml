@@ -11,7 +11,7 @@
         android:id="@+id/rl"
         android:gravity="center_horizontal"
         android:background="#9b04600e"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true">
 
@@ -51,7 +51,7 @@
         android:background="@drawable/sel_btn_alphabet"
         android:layout_width="210dp"
         android:id="@+id/alphabet_btn"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/alphabet"
         android:textSize="30sp"
         android:layout_above="@+id/code_btn"
@@ -60,7 +60,7 @@
     <Button
         android:background="@drawable/sel_btn_code"
         android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/makecode"
         android:id="@+id/code_btn"
         android:textSize="30sp"
@@ -71,7 +71,7 @@
     <Button
         android:background="@drawable/sel_btn_train"
         android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/totrain"
         android:id="@+id/train_btn"
         android:textSize="30sp"
@@ -82,7 +82,7 @@
     <Button
         android:background="@drawable/sel_btn_key"
         android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/tips"
         android:id="@+id/tips_btn"
         android:textSize="30sp"
@@ -93,13 +93,13 @@
     <Button
         android:background="@drawable/sel_btn_exit"
         android:layout_width="210dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="@string/toexit"
         android:id="@+id/exit_btn"
         android:textSize="30sp"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/tips_btn"
         android:layout_alignStart="@+id/tips_btn"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="15dp" />
 
 </RelativeLayout>

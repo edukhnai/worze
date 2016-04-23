@@ -29,7 +29,7 @@
         android:layout_height="100dp"
         android:textColor="#4dbe7e"
         android:text="@string/listsing"
-        android:textSize="44sp"
+        android:textSize="42sp"
         android:gravity="center_vertical"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
@@ -43,7 +43,7 @@
         android:layout_height="100dp"
         android:text="@string/listcode"
         android:textColor="#4dbe7e"
-        android:textSize="44sp"
+        android:textSize="42sp"
         android:gravity="center_vertical"
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/texttxt"
@@ -61,7 +61,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:textColor="#22a35a"
-        android:textSize="80sp" />
+        android:textSize="65sp" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -7,8 +7,8 @@
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:progressDrawable="@drawable/splashprogbar"
-        android:layout_width="350sp"
-        android:layout_height="40sp"
+        android:layout_width="280sp"
+        android:layout_height="30sp"
         android:id="@+id/pbView"
         android:max="100"
         android:indeterminate="false"
@@ -17,32 +17,31 @@
         android:layout_centerHorizontal="true" />
     <TextView
         android:layout_width="110sp"
-        android:layout_height="39sp"
+        android:layout_height="30sp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/percent"
         android:id="@+id/percent"
         android:gravity="center_vertical"
         android:textColor="#cddb9d"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:layout_below="@+id/splsh"
         android:layout_alignRight="@+id/pbView"
         android:layout_alignEnd="@+id/pbView" />
     <TextView
         android:layout_width="150sp"
-        android:layout_height="39sp"
+        android:layout_height="30sp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/loading"
         android:id="@+id/textView3"
         android:gravity="center_vertical"
         android:textColor="#cddb9d"
-        android:textSize="25sp"
-        android:layout_alignBottom="@+id/pbView"
-        android:layout_toLeftOf="@+id/percent"
-        android:layout_toStartOf="@+id/percent" />
+        android:textSize="18sp"
+        android:layout_below="@+id/splsh"
+        android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="350dp"
-        android:layout_height="500dp"
+        android:layout_width="280dp"
+        android:layout_height="400dp"
         android:id="@+id/splsh"
         android:src="@mipmap/mrworze"
         android:layout_above="@+id/pbView"
