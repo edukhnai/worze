@@ -45,22 +45,28 @@ public class TrainActivity extends AppCompatActivity {
     /**
      * Слушатель нажатий на кнопки данной активности
      */
+    View.OnClickListener trainListener;
+   /**Счетчик нажатий на кнопку динамика*/
+    int counter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_main);
+        if (savedInstanceState == null) {
+            setContentView(R.layout.train_main);
+        }
         ws = WorzeSingleton.getInstance(getApplicationContext());
         context = this.getApplicationContext();
         str = "";
         train_et = (EditText) findViewById(R.id.train_et);
         ready_train = (Button) findViewById(R.id.ready_train);
-        ready_train.setClickable(false);
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        initListener();
         ready_train.setOnClickListener(trainListener);
         btnReady = (Button) findViewById(R.id.btnReady);
-        btnReady.setOnClickListener(trainListener);
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+        if(btnReady!=null)btnReady.setOnClickListener(trainListener);
+
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -69,59 +75,71 @@ public class TrainActivity extends AppCompatActivity {
         };
         thread.start();
     }
-    View.OnClickListener trainListener = new View.OnClickListener() {
 
-        @Override
-        public void onClick(View v) {
-            switch (v.getId()) {
-                case R.id.ready_train:
-                    if (ws.getRightStr().length() == ws.getGroups() * 5) {
-                        if (train_et.getText().toString().equals("")) {
+    public void initListener() {
+        trainListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.ready_train:
+                        if (ws.getRightStr().length() == ws.getGroups() * 5) {
+                            ready_train.setClickable(true);
+                            if (train_et.getText().toString().equals("")) {
+                                ws.makeToast(context, getString(R.string.where_answ), R.drawable.toast_red);
+                            } else {
+                                ws.setCustomStr(train_et.getText().toString());
+                                ws.setCurrentScore(compareAnswer(ws.getRightStr(), ws.getCustomStr()));
+                                ws.setMaxScore(ws.getCurrentScore());
+                                startActivity(new Intent(TrainActivity.this, TrainResults.class));
+                                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                            }
+                        } else
                             ws.makeToast(context, getString(R.string.where_answ), R.drawable.toast_red);
-                        } else {
-                            ws.setCustomStr(train_et.getText().toString());
-                            ws.setCurrentScore(compareAnswer(ws.getRightStr(), ws.getCustomStr()));
-                            ws.setMaxScore(ws.getCurrentScore());
-                            startActivity(new Intent(TrainActivity.this, TrainResults.class));
-                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        }
-                    }
-                    break;
-                case R.id.btnReady:
-                    btnReady.setBackgroundResource(R.mipmap.playsay_btn_selected);
-                    new MyTask().execute();
-                    btnReady.setClickable(false);
-                    btnReady.setBackgroundResource(R.mipmap.playsay_btn_pressed);
-                    break;
+                        break;
+                    case R.id.btnReady:
+                        counter++;
+                            btnReady.setBackgroundResource(R.mipmap.playsay_btn_selected);
+                        btnReady.setClickable(false);
+                            new MyTask().execute();
+                        btnReady.setClickable(true);
+                        btnReady.setBackgroundResource(R.mipmap.playsay_btn);
+                        break;
+                }
             }
-        }
-    };
+        };
+    }
+
     /**
      * Метод, создающий массив произвольных символов в соответствии с предпочтениями пользователя, проигрывающий их кодировки
      * и сохраняющий правильную строку
      */
     public void playGroups() {
-        char[] ch = new char[5];
-        for (int i = 0; i < ch.length; i++) {
-            if (ws.getTrainLanguage() == 0) {
-                if (ws.getUsingSymbs() == 0) {
-                    ch[i] = charRandom("абвгдежзийклмнопрстуфхцчшщьыэюя");
+        char[] ch;
+        if (ws.getRightStr().equals("")) {
+            ch = new char[5];
+            for (int i = 0; i < ch.length; i++) {
+                if (ws.getTrainLanguage() == 0) {
+                    if (ws.getUsingSymbs() == 0) {
+                        ch[i] = charRandom("абвгдежзийклмнопрстуфхцчшщьыэюя");
+                    } else {
+                        ch[i] = charRandom("абвгдежзийклмнопрстуфхцчшщьыэюя1234567890-+=.,/!@;:?)&amp;+=_$");
+                    }
                 } else {
-                    ch[i] = charRandom("абвгдежзийклмнопрстуфхцчшщьыэюя1234567890-+=.,/!@;:?)&amp;+=_$");
-                }
-            } else {
-                if (ws.getUsingSymbs() == 0) {
-                    ch[i] = charRandom("abcdefghijklmnopqrstuvwxyz");
-                } else {
-                    ch[i] = charRandom("abcdefghijklmnopqrstuvwxyz1234567890-+=.,/!@;:?)&amp;+=_$");
-                }
+                    if (ws.getUsingSymbs() == 0) {
+                        ch[i] = charRandom("abcdefghijklmnopqrstuvwxyz");
+                    } else {
+                        ch[i] = charRandom("abcdefghijklmnopqrstuvwxyz1234567890-+=.,/!@;:?)&amp;+=_$");
+                    }
 
+                }
             }
+        } else {
+            ch = ws.getRightStr().toCharArray();
         }
         for (int j = 0; j < ch.length; j++) {
             MakeSounds.playSound(ch[j], soundPool);
             MakeSounds.makeDelay(ws.getDelay());
-            str += String.valueOf(ch[j]);
+           if(counter==1){ str += String.valueOf(ch[j]);}
             Log.d("myLogs", "str=" + str);
         }
         MakeSounds.makeDelay(ws.getDelay() * 2);
@@ -202,6 +220,7 @@ public class TrainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+        soundPool.release();
     }
 
     @Override

@@ -4,100 +4,136 @@
     android:layout_height="match_parent"
     android:background="@mipmap/back_mainmenu">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rll"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp">
+
+
     <RelativeLayout
         android:id="@+id/rl"
-        android:layout_width="670dp"
-        android:layout_height="320dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#9b04600e"
         android:gravity="center_horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true">
+        android:layout_marginBottom="50dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp">
 
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|bottom"
             android:text="@string/hallo"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010200"
-            android:textSize="105sp"
+            android:textSize="65sp"
             android:theme="@style/Base.AlertDialog.AppCompat.Light"
-            android:typeface="sans" />
+            android:typeface="sans"
+            android:textIsSelectable="false"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
 
         <TextView
             android:id="@+id/name_tv"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:clickable="true"
-            android:gravity="center"
+            android:gravity="center_horizontal|top"
             android:text="@string/player_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010100"
-            android:textSize="95sp"
-            android:typeface="sans" />
+            android:textSize="60sp"
+            android:typeface="sans"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp" />
     </RelativeLayout>
 
-   <!-- -->
+    <ScrollView
+        android:id="@+id/scrollButtons"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:id="@+id/linButtons"
+        android:weightSum="1">
     <Button
         android:id="@+id/alphabet_btn"
-        android:layout_width="580dp"
-        android:layout_height="135dp"
-        android:layout_above="@+id/code_btn"
-        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/sel_btn_alphabet"
         android:text="@string/alphabet"
-        android:textSize="75sp" />
+        android:textSize="50sp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/code_btn"
-        android:layout_width="580dp"
-        android:layout_height="135dp"
-        android:layout_above="@+id/train_btn"
-        android:layout_alignLeft="@+id/alphabet_btn"
-        android:layout_alignStart="@+id/alphabet_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/sel_btn_code"
         android:text="@string/makecode"
-        android:textSize="75sp" />
+        android:textSize="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/train_btn"
-        android:layout_width="580dp"
-        android:layout_height="135dp"
-        android:layout_above="@+id/tips_btn"
-        android:layout_alignLeft="@+id/code_btn"
-        android:layout_alignStart="@+id/code_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/sel_btn_train"
         android:text="@string/totrain"
-        android:textSize="75sp" />
+        android:textSize="50sp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/tips_btn"
-        android:layout_width="580dp"
-        android:layout_height="135dp"
-        android:layout_above="@+id/exit_btn"
-        android:layout_alignLeft="@+id/train_btn"
-        android:layout_alignStart="@+id/train_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/sel_btn_key"
         android:text="@string/tips"
-        android:textSize="75sp" />
+        android:textSize="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/exit_btn"
-        android:layout_width="580dp"
-        android:layout_height="135dp"
-        android:layout_alignLeft="@+id/tips_btn"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/tips_btn"
-        android:layout_marginBottom="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/sel_btn_exit"
         android:text="@string/toexit"
-        android:textSize="75sp" />
-
+        android:textSize="50dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
+        </LinearLayout>
+        </ScrollView>
+</LinearLayout>
 </RelativeLayout>

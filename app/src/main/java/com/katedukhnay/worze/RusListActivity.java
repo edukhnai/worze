@@ -35,15 +35,19 @@ Button toEngListFromRus;
     /**Таблица отдельных русских букв в качестве символов*/
     HashMap<Integer, Character> soundsRus;
     final static String rusAlphabet="абвгдежзийклмнопрстуфхцчшщьыэюя";
+   /**Слушатель нажатий на кнопки*/
+    View.OnClickListener toEngFromRus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alphabet_list_rus);
+        if (savedInstanceState == null) {
+        setContentView(R.layout.alphabet_list_rus);}
         toEngListFromRus=(Button)findViewById(R.id.toEngListFromRus);
+        initListener();
         toEngListFromRus.setOnClickListener(toEngFromRus);
         listAlphabetRus = (ListView) findViewById(R.id.listAlphabetRus);
-        alphaListRus = new ArrayList<HashMap<String, Object>>();
+        alphaListRus = new ArrayList<>();
         context=this;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
         soundsRus=new HashMap<>();
@@ -97,17 +101,16 @@ Button toEngListFromRus;
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MakeSounds.playSound(soundsRus.get(position), sp);
             }
-        });
-    }
-    /**Слушатель для кнопки перехода из данной активности в соседнюю*/
-    View.OnClickListener toEngFromRus=new View.OnClickListener(){
+        });}
+public void initListener(){
+   toEngFromRus=new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
             startActivity(new Intent(RusListActivity.this, EngListActivity.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
-    };
+    };}
     /**При нажатии на кнопку Back пользователь попадает в главное меню*/
     @Override
     public void onBackPressed(){

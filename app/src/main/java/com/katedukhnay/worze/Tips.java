@@ -16,8 +16,8 @@ public class Tips extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tips);
+        super.onCreate(savedInstanceState);  if (savedInstanceState == null) {  setContentView(R.layout.tips);}
+
         context=this;
         myMail=(TextView)findViewById(R.id.myMail);
 myMail.setOnClickListener(new View.OnClickListener(){

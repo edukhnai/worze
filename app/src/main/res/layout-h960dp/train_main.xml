@@ -41,7 +41,7 @@
         android:layout_height="170dp"
         android:id="@+id/btnReady"
         android:clickable="true"
-        android:background="@mipmap/playsay_btn"
+        android:background="@drawable/sel_btn_ready"
         android:layout_above="@+id/train_et"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="80dp" />

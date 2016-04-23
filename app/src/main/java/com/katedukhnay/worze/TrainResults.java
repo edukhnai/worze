@@ -20,25 +20,23 @@ public class TrainResults extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_results);
+        super.onCreate(savedInstanceState); if (savedInstanceState == null) {  setContentView(R.layout.train_results); }
+
         finalPercents=(TextView)findViewById(R.id.finalPersents);
         maxPercents=(TextView)findViewById(R.id.maxPercents);
         ws=WorzeSingleton.getInstance(getApplicationContext());
         context=this.getApplicationContext();
         toMenu=(Button)findViewById(R.id.toMenu);
-        toMenu.setOnClickListener(toMenuListener);
+        toMenu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TrainResults.this, MainMenu.class));
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
         finalPercents.setText(Integer.toString(ws.getCurrentScore()).concat(getString(R.string.prsent)));
         maxPercents.setText(Integer.toString(ws.getMaxScore()).concat(getString(R.string.prsent)));
-    }
-    /**Слушатель нажатия на кнопку возрата в главное меню*/
-    View.OnClickListener toMenuListener=new View.OnClickListener(){
-        @Override
-        public void onClick(View v) {
-            startActivity(new Intent(TrainResults.this, MainMenu.class));
-            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-        }
-    };
+  }
     /**Не позволяет пользователю использовать кнопку Back*/
     @Override
     public void onBackPressed(){}

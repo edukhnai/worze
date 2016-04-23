@@ -35,20 +35,24 @@ public class EngListActivity extends AppCompatActivity {
     /**Таблица отдельных английских букв в качестве символов*/
     HashMap<Integer, Character> soundsEng;
     final static String engAlphabet="abcdefghijklmnopqrstuvwxyz";
+    /**Слушатель для кнопок переходов из данной активности в соседние*/
+    View.OnClickListener fromEng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.alphabet_list_eng);
+            super.onCreate(savedInstanceState);
+       if (savedInstanceState == null) {
+        setContentView(R.layout.alphabet_list_eng);}
         toRusListFromEng = (Button) findViewById(R.id.toRusListFromEng);
+        initListener();
         toRusListFromEng.setOnClickListener(fromEng);
         toSymbsListFromEng = (Button) findViewById(R.id.toSymbsListFromEng);
-        toSymbsListFromEng.setOnClickListener(fromEng);
+        if(toSymbsListFromEng!=null)toSymbsListFromEng.setOnClickListener(fromEng);
         listAlphabetEng = (ListView) findViewById(R.id.listAlphabetEng);
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
-        context=this;
-        alphaListEng = new ArrayList<HashMap<String, Object>>();
-        soundsEng=new HashMap<>();
+        context = this;
+        alphaListEng = new ArrayList<>();
+        soundsEng = new HashMap<>();
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -57,28 +61,28 @@ public class EngListActivity extends AppCompatActivity {
         };
         thread.start();
 /**Массив зашифровок букв*/
-        String[] codes = {getString(R.string.a_rus_code),getString(R.string.b_rus_code),getString(R.string.ce_rus_code),getString(R.string.d_rus_code),
-                getString(R.string.e_rus_code),getString(R.string.f_rus_code),getString(R.string.ge_rus_code),getString(R.string.x_rus_code),
-                getString(R.string.i_rus_code), getString(R.string.ij_rus_code),getString(R.string.k_rus_code),getString(R.string.el_rus_code),getString(R.string.m_rus_code),
-                getString(R.string.n_rus_code),getString(R.string.o_rus_code),getString(R.string.pe_rus_code),getString(R.string.shja_rus_code),
-                getString(R.string.r_code),getString(R.string.es_rus_code),getString(R.string.t_rus_code),getString(R.string.y_rus_code),
-                getString(R.string.je_rus_code),getString(R.string.ve_rus_code),getString(R.string.znaki_rus_code),getString(R.string.ji_rus_code),
+        String[] codes = {getString(R.string.a_rus_code), getString(R.string.b_rus_code), getString(R.string.ce_rus_code), getString(R.string.d_rus_code),
+                getString(R.string.e_rus_code), getString(R.string.f_rus_code), getString(R.string.ge_rus_code), getString(R.string.x_rus_code),
+                getString(R.string.i_rus_code), getString(R.string.ij_rus_code), getString(R.string.k_rus_code), getString(R.string.el_rus_code), getString(R.string.m_rus_code),
+                getString(R.string.n_rus_code), getString(R.string.o_rus_code), getString(R.string.pe_rus_code), getString(R.string.shja_rus_code),
+                getString(R.string.r_code), getString(R.string.es_rus_code), getString(R.string.t_rus_code), getString(R.string.y_rus_code),
+                getString(R.string.je_rus_code), getString(R.string.ve_rus_code), getString(R.string.znaki_rus_code), getString(R.string.ji_rus_code),
                 getString(R.string.ze_rus_code)};
 /**Массив напевов для букв*/
-        String[] sings = {getString(R.string.a_rus_sing),getString(R.string.b_rus_sing),getString(R.string.ce_rus_sing),getString(R.string.d_rus_sing),
-                getString(R.string.e_rus_sing),getString(R.string.f_rus_sing),getString(R.string.ge_rus_sing),getString(R.string.x_rus_sing),
-                getString(R.string.i_rus_sing), getString(R.string.ij_rus_sing),getString(R.string.k_rus_sing),getString(R.string.el_rus_sing),getString(R.string.m_rus_sing),
-                getString(R.string.n_rus_sing),getString(R.string.o_rus_sing),getString(R.string.pe_rus_sing),getString(R.string.shja_rus_sing),
-                getString(R.string.er_rus_sing),getString(R.string.es_rus_sing),getString(R.string.t_rus_sing),getString(R.string.y_rus_sing),
-                getString(R.string.je_rus_sing),getString(R.string.ve_rus_sing),getString(R.string.znaki_rus_sing),getString(R.string.ji_rus_sing),
+        String[] sings = {getString(R.string.a_rus_sing), getString(R.string.b_rus_sing), getString(R.string.ce_rus_sing), getString(R.string.d_rus_sing),
+                getString(R.string.e_rus_sing), getString(R.string.f_rus_sing), getString(R.string.ge_rus_sing), getString(R.string.x_rus_sing),
+                getString(R.string.i_rus_sing), getString(R.string.ij_rus_sing), getString(R.string.k_rus_sing), getString(R.string.el_rus_sing), getString(R.string.m_rus_sing),
+                getString(R.string.n_rus_sing), getString(R.string.o_rus_sing), getString(R.string.pe_rus_sing), getString(R.string.shja_rus_sing),
+                getString(R.string.er_rus_sing), getString(R.string.es_rus_sing), getString(R.string.t_rus_sing), getString(R.string.y_rus_sing),
+                getString(R.string.je_rus_sing), getString(R.string.ve_rus_sing), getString(R.string.znaki_rus_sing), getString(R.string.ji_rus_sing),
                 getString(R.string.ze_rus_sing)};
 /**Массив изображений для букв*/
-        int[] images = {R.mipmap.a,R.mipmap.b,R.mipmap.c,R.mipmap.eng_d,R.mipmap.e,R.mipmap.eng_f,R.mipmap.eng_g, R.mipmap.nh,R.mipmap.eng_i,
-                R.mipmap.eng_j,R.mipmap.k,R.mipmap.eng_l,R.mipmap.m,R.mipmap.eng_n,R.mipmap.o,R.mipmap.p,R.mipmap.eng_q,R.mipmap.eng_r,R.mipmap.eng_s,
-                R.mipmap.t,R.mipmap.eng_u,R.mipmap.eng_v,R.mipmap.eng_w,R.mipmap.x,R.mipmap.eng_y,R.mipmap.eng_z};
+        int[] images = {R.mipmap.a, R.mipmap.b, R.mipmap.c, R.mipmap.eng_d, R.mipmap.e, R.mipmap.eng_f, R.mipmap.eng_g, R.mipmap.nh, R.mipmap.eng_i,
+                R.mipmap.eng_j, R.mipmap.k, R.mipmap.eng_l, R.mipmap.m, R.mipmap.eng_n, R.mipmap.o, R.mipmap.p, R.mipmap.eng_q, R.mipmap.eng_r, R.mipmap.eng_s,
+                R.mipmap.t, R.mipmap.eng_u, R.mipmap.eng_v, R.mipmap.eng_w, R.mipmap.x, R.mipmap.eng_y, R.mipmap.eng_z};
 
-        for (int q=0; q<images.length; q++){
-            soundsEng.put(q,engAlphabet.charAt(q));
+        for (int q = 0; q < images.length; q++) {
+            soundsEng.put(q, engAlphabet.charAt(q));
         }
         for (int i = 0; i < codes.length; i++) {
             addToHm(codes[i], sings[i], images[i], alphaListEng);
@@ -94,12 +98,14 @@ public class EngListActivity extends AppCompatActivity {
         listAlphabetEng.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-MakeSounds.playSound(soundsEng.get(position), sp);
-}
-            });
+                MakeSounds.playSound(soundsEng.get(position), sp);
+            }
+        });
+
     }
-    /**Слушатель для кнопок переходов из данной активности в соседние*/
-    View.OnClickListener fromEng = new View.OnClickListener() {
+
+public void initListener(){
+fromEng = new View.OnClickListener() {
 
         @Override
         public void onClick(View v) {
@@ -114,10 +120,10 @@ MakeSounds.playSound(soundsEng.get(position), sp);
                     break;
             }
         }
-    };
+    };}
     /**Метод для добавления элемента в HashMap*/
     public static void addToHm(String s1, String s2, int icon, ArrayList<HashMap<String, Object>> alphaList) {
-        HashMap<String, Object> h = new HashMap<String, Object>();
+        HashMap<String, Object> h = new HashMap<>();
         h.put(CODE1, s1);
         h.put(SING1, s2);
         h.put(ICON1, icon);

@@ -42,7 +42,7 @@
         android:layout_height="240dp"
         android:id="@+id/btnReady"
         android:clickable="true"
-        android:background="@mipmap/playsay_btn"
+        android:background="@drawable/sel_btn_ready"
         android:layout_marginTop="116dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />

@@ -10,8 +10,8 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:gravity="center"
+        android:inputType="textEmailSubject"
         android:hint="@string/addname"
-        android:lines="1"
         android:maxLength="20"
         android:text="" />
 </RelativeLayout>

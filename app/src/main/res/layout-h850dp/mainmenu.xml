@@ -4,115 +4,134 @@
     android:layout_height="match_parent"
     android:background="@mipmap/back_mainmenu">
 
-
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/rll"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp">
+
+
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/rl"
-        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="#9b04600e"
-        android:layout_above="@+id/alphabet_btn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp"
-        android:layout_gravity="top">
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="60dp">
 
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/hallo"
             android:id="@+id/textView"
-            android:textColor="#010200"
-            android:textSize="50sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal|bottom"
-            android:typeface="sans"
+            android:text="@string/hallo"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#010200"
+            android:textSize="60sp"
             android:theme="@style/Base.AlertDialog.AppCompat.Light"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:typeface="sans"
+            android:textIsSelectable="false"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="@android:color/transparent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/player_name"
             android:id="@+id/name_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:clickable="true"
+            android:gravity="center_horizontal|top"
+            android:text="@string/player_name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010100"
-            android:gravity="center|center_vertical|fill_vertical|top"
-            android:textSize="50sp"
+            android:textSize="55sp"
             android:typeface="sans"
             android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp" />
     </RelativeLayout>
 
-   <!-- -->
+    <ScrollView
+        android:id="@+id/scrollButtons"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:id="@+id/linButtons"
+        android:weightSum="1">
     <Button
-        android:background="@drawable/sel_btn_alphabet"
-        android:layout_width="300dp"
         android:id="@+id/alphabet_btn"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_btn_alphabet"
         android:text="@string/alphabet"
         android:textSize="45sp"
-        android:layout_above="@+id/code_btn"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
-        android:background="@drawable/sel_btn_code"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:text="@string/makecode"
         android:id="@+id/code_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_btn_code"
+        android:text="@string/makecode"
         android:textSize="45sp"
-        android:layout_above="@+id/train_btn"
-        android:layout_alignLeft="@+id/alphabet_btn"
-        android:layout_alignStart="@+id/alphabet_btn" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
-        android:background="@drawable/sel_btn_train"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:text="@string/totrain"
         android:id="@+id/train_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_btn_train"
+        android:text="@string/totrain"
         android:textSize="45sp"
-        android:layout_above="@+id/tips_btn"
-        android:layout_alignLeft="@+id/code_btn"
-        android:layout_alignStart="@+id/code_btn" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
-        android:background="@drawable/sel_btn_key"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:text="@string/tips"
         android:id="@+id/tips_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_btn_key"
+        android:text="@string/tips"
         android:textSize="45sp"
-        android:layout_above="@+id/exit_btn"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
-        android:background="@drawable/sel_btn_exit"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:text="@string/toexit"
         android:id="@+id/exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sel_btn_exit"
+        android:text="@string/toexit"
         android:textSize="45sp"
-        android:layout_marginBottom="59dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
+        </LinearLayout>
+        </ScrollView>
 </LinearLayout>
-    </RelativeLayout>
+</RelativeLayout>

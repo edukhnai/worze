@@ -42,7 +42,7 @@
         android:id="@+id/textView4"
         android:gravity="center_vertical|center_horizontal"
         android:layout_gravity="center_vertical"
-        android:textSize="25sp"
+        android:textSize="19sp"
         android:layout_alignTop="@+id/symbolDelay"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2" />

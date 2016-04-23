@@ -7,7 +7,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="wrap_content"
         android:id="@+id/textabove"
         android:typeface="sans"
         android:overScrollMode="always"
@@ -29,9 +29,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout"
-        android:layout_above="@+id/textbelow"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
     <Button
@@ -53,9 +54,7 @@
             android:contentDescription="@+id/speech_btn"
             android:layout_alignTop="@+id/translate_btn"
             android:layout_toRightOf="@+id/sounds_btn"
-            android:layout_toEndOf="@+id/sounds_btn"
-            android:layout_marginLeft="68dp"
-            android:layout_marginStart="68dp" />
+            android:layout_toEndOf="@+id/sounds_btn" />
     <Button
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -65,9 +64,7 @@
         android:textColor="#c7ffffff"
         android:layout_alignTop="@+id/shest_btn"
         android:layout_toRightOf="@+id/shest_btn"
-        android:layout_toEndOf="@+id/shest_btn"
-        android:layout_marginLeft="70dp"
-        android:layout_marginStart="70dp" />
+        android:layout_toEndOf="@+id/shest_btn" />
 
         <Button
             android:layout_width="200dp"
@@ -84,7 +81,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="wrap_content"
         android:id="@+id/textbelow"
         android:overScrollMode="always"
         android:typeface="sans"
@@ -98,5 +95,6 @@
         android:textSize="45sp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        android:layout_below="@+id/relativeLayout" />
 </RelativeLayout>

@@ -7,7 +7,7 @@
     <EditText
         android:id="@+id/textabove"
         android:layout_width="match_parent"
-        android:layout_height="215dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -28,17 +28,17 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_above="@+id/textbelow"
-        android:layout_alignRight="@+id/textabove"
-        android:layout_alignEnd="@+id/textabove"
-        android:layout_alignLeft="@+id/textabove"
-        android:layout_alignStart="@+id/textabove">
+        android:layout_height="90dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
         <Button
             android:id="@+id/shest_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@drawable/sel_btn_shesterenka"
             android:clickable="true"
             android:contentDescription="@+id/shest_btn"
@@ -48,35 +48,42 @@
 
         <Button
             android:id="@+id/speech_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@mipmap/speech_btn"
             android:clickable="true"
             android:contentDescription="@+id/speech_btn"
-            android:layout_alignTop="@+id/sounds_btn"
-            android:layout_centerHorizontal="true" />
+            android:layout_marginRight="54dp"
+            android:layout_marginEnd="54dp"
+            android:layout_alignBottom="@+id/translate_btn"
+            android:layout_toLeftOf="@+id/translate_btn"
+            android:layout_toStartOf="@+id/translate_btn" />
 
         <Button
             android:id="@+id/sounds_btn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:background="@mipmap/sounds_btn"
             android:textColor="#c7ffffff"
             android:textSize="25sp"
-            android:layout_marginRight="47dp"
-            android:layout_marginEnd="47dp"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/speech_btn"
-            android:layout_toStartOf="@+id/speech_btn" />
+            android:layout_marginLeft="47dp"
+            android:layout_marginStart="47dp"
+            android:layout_alignTop="@+id/speech_btn"
+            android:layout_toRightOf="@+id/shest_btn"
+            android:layout_toEndOf="@+id/shest_btn" />
 
         <Button
             android:id="@+id/translate_btn"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
             android:background="@drawable/sel_btn_translate"
             android:text="@string/translate"
-            android:textSize="17sp"
-            android:layout_alignTop="@+id/speech_btn"
+            android:textSize="25sp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
@@ -85,7 +92,7 @@
     <TextView
         android:id="@+id/textbelow"
         android:layout_width="match_parent"
-        android:layout_height="215dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -98,5 +105,6 @@
         android:scrollbars="vertical"
         android:textIsSelectable="true"
         android:textSize="30sp"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:layout_below="@+id/relativeLayout" />
 </RelativeLayout>

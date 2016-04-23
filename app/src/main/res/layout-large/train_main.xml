@@ -6,7 +6,7 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="250dp"
         android:id="@+id/train_et"
         android:typeface="sans"
         android:overScrollMode="always"
@@ -36,12 +36,11 @@
         android:textSize="35sp" />
 
     <Button
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:id="@+id/btnReady"
         android:clickable="true"
-        android:background="@mipmap/playsay_btn"
-        android:layout_marginTop="90dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/sel_btn_ready"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
 </RelativeLayout>

@@ -26,24 +26,30 @@ EditText groupAmount, symbolDelay;
     TextView chooseLang;
     /**CheckBox для выбора пользователем, будут ли в группах символы и цифры или нет*/
     CheckBox symbCheck;
+    /**Слушатель нажатий на кнопки данной активности*/
+    View.OnClickListener readyListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.train_options);
-        ws=WorzeSingleton.getInstance(getApplicationContext());
-        context=this.getApplicationContext();
-        groupAmount=(EditText)findViewById(R.id.groupAmount);
-        symbolDelay=(EditText)findViewById(R.id.symbolDelay);
-        readyToPlay=(Button)findViewById(R.id.readyToPlay);
-        readyToPlay.setOnClickListener(this.readyListener);
-        chooseLang=(TextView)findViewById(R.id.chooselang);
-        chooseLang.setOnClickListener(this.readyListener);
-        symbCheck=(CheckBox)findViewById(R.id.symbCheck);
+        if (savedInstanceState == null) {
+            setContentView(R.layout.train_options);
+        }
 
+        ws = WorzeSingleton.getInstance(getApplicationContext());
+        context = this.getApplicationContext();
+        groupAmount = (EditText) findViewById(R.id.groupAmount);
+        symbolDelay = (EditText) findViewById(R.id.symbolDelay);
+        readyToPlay = (Button) findViewById(R.id.readyToPlay);
+        initListener();
+        readyToPlay.setOnClickListener(this.readyListener);
+        chooseLang = (TextView) findViewById(R.id.chooselang);
+        if(chooseLang!=null)chooseLang.setOnClickListener(this.readyListener);
+        symbCheck = (CheckBox) findViewById(R.id.symbCheck);
     }
-    /**Слушатель нажатий на кнопки данной активности*/
-    View.OnClickListener readyListener= new View.OnClickListener() {
+
+public void initListener(){
+ readyListener= new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()){
@@ -63,7 +69,7 @@ EditText groupAmount, symbolDelay;
                ws.setDelay(Long.valueOf(symbolDelay.getText().toString()));
                startActivity(new Intent(TrainOptions.this, TrainActivity.class));
               overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-           };
+           }
             break;
                 case R.id.chooselang:
                     PopupMenu pm= new PopupMenu(context, v);
@@ -92,7 +98,7 @@ EditText groupAmount, symbolDelay;
 
             }
         }
-    };
+    };}
     /**При нажатии на кнопку Back пользователь попадает в главное меню*/
     @Override
     public void onBackPressed(){

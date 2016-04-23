@@ -74,6 +74,12 @@ public class CodeActivity extends AppCompatActivity {
      * Менеджер сенсоров
      */
     private SensorManager sensorManager;
+    /**
+     * Слушатель нажатий на кнопки
+     */
+    View.OnClickListener listener2;
+/**ПОДПИСАТЬ СРОЧНА!!!!111АДЫНАДЫН*/
+    Thread soundThread;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -89,6 +95,7 @@ public class CodeActivity extends AppCompatActivity {
         translate_btn = (Button) findViewById(R.id.translate_btn);
         shest_btn = (Button) findViewById(R.id.shest_btn);
         speech_btn = (Button) findViewById(R.id.speech_btn);
+        initListener();
         speech_btn.setOnClickListener(this.listener2);
         sounds_btn.setOnClickListener(this.listener2);
         shest_btn.setOnClickListener(this.listener2);
@@ -99,21 +106,10 @@ public class CodeActivity extends AppCompatActivity {
         mAccelLast = SensorManager.GRAVITY_EARTH;
         enableAccelerometerListening();
         mylistener = new CleanSensorEventListener();
-        sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                MakeSounds.loadSounds(sp, context);
-            }
-        };
-        thread.start();
+
     }
-
-
-    /**
-     * Слушатель нажатий на кнопки
-     */
-    View.OnClickListener listener2 = new View.OnClickListener() {
+public void initListener(){
+    listener2 = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
@@ -133,6 +129,7 @@ public class CodeActivity extends AppCompatActivity {
                 case R.id.sounds_btn:
                     if (ws.getUsingSounds() == 0) {
                         ws.setUsingSounds(1);
+                       initSounds();
                         sounds_btn.setBackgroundResource(R.mipmap.sounds_btn_selected);
                     } else {
                         ws.setUsingSounds(0);
@@ -148,11 +145,10 @@ public class CodeActivity extends AppCompatActivity {
                         public boolean onMenuItemClick(MenuItem item) {
                             switch (item.getItemId()) {
                                 case R.id.tocode:
+                                    if(sp!=null)sp.release();
                                     sounds_btn.setClickable(true);
                                     speech_btn.setClickable(true);
-                                    if (ws.getUsingSounds() == 1) {
-                                        sounds_btn.setBackgroundResource(R.mipmap.sounds_btn_selected);
-                                    } else sounds_btn.setBackgroundResource(R.mipmap.sounds_btn);
+                                    sounds_btn.setBackgroundResource(R.mipmap.sounds_btn);
                                     speech_btn.setBackgroundResource(R.mipmap.speech_btn);
                                     if (ws.getConverting() == 1) {
                                         textabove.setText("");
@@ -161,6 +157,7 @@ public class CodeActivity extends AppCompatActivity {
                                     ws.setConverting(0);
                                     return true;
                                 case R.id.todecoderus:
+                                    if(sp!=null)sp.release();
                                     sounds_btn.setClickable(false);
                                     speech_btn.setClickable(false);
                                     sounds_btn.setBackgroundResource(R.mipmap.sounds_btn_pressed);
@@ -173,6 +170,7 @@ public class CodeActivity extends AppCompatActivity {
                                     ws.setLanguage(0);
                                     return true;
                                 case R.id.todecodeeng:
+                                    if(sp!=null)sp.release();
                                     sounds_btn.setClickable(false);
                                     speech_btn.setClickable(false);
                                     sounds_btn.setBackgroundResource(R.mipmap.sounds_btn_pressed);
@@ -185,6 +183,7 @@ public class CodeActivity extends AppCompatActivity {
                                     ws.setLanguage(1);
                                     return true;
                                 case R.id.tosend:
+                                    if(sp!=null)sp.release();
                                     if (textbelow.getText().toString().equals("")) {
                                         ws.makeToast(context, getString(R.string.translate_anything), R.drawable.toast_red);
                                     } else {
@@ -222,7 +221,7 @@ public class CodeActivity extends AppCompatActivity {
                         if (ws.getConverting() == 0) {
                             textbelow.setText(CodingMeths.coding(textabove.getText().toString().toLowerCase()));
                             if (ws.getUsingSounds() == 1) {
-                                Thread thread2 = new Thread() {
+                               Thread soundThread = new Thread() {
                                     @Override
                                     public void run() {
                                         String st = textabove.getText().toString().replaceAll("\\s", "").toLowerCase();
@@ -231,8 +230,7 @@ public class CodeActivity extends AppCompatActivity {
                                             MakeSounds.makeDelay(ws.getDelay());
                                         }
                                     }
-                                };
-                                thread2.start();
+                                };soundThread.start();
                             }
                         } else {
                             textbelow.setText(CodingMeths.decoding(textabove.getText().toString(), ws.getLanguage()));
@@ -242,7 +240,8 @@ public class CodeActivity extends AppCompatActivity {
             }
 
         }
-    };
+    };}
+
 
     /**
      * Получение результата работы распознавания речи
@@ -277,6 +276,7 @@ public class CodeActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         disableAccelerometerListening();
+        if(sp!=null)sp.release();
     }
 
     /**
@@ -316,7 +316,16 @@ public class CodeActivity extends AppCompatActivity {
         ((SensorManager) getSystemService(SENSOR_SERVICE)).registerListener(
                 mylistener, s, SensorManager.SENSOR_DELAY_NORMAL);
     }
-
+public void initSounds(){
+    sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+    Thread thread = new Thread() {
+        @Override
+        public void run() {
+            MakeSounds.loadSounds(sp, context);
+        }
+    };
+    thread.start();
+}
     @Override
     protected void onStop() {
         super.onStop();

@@ -12,8 +12,8 @@
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="35dp">
 
@@ -35,7 +35,7 @@
             android:text="@string/hallo"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010200"
-            android:textSize="60sp"
+            android:textSize="70sp"
             android:theme="@style/Base.AlertDialog.AppCompat.Light"
             android:typeface="sans"
             android:textIsSelectable="false"
@@ -52,7 +52,7 @@
             android:text="@string/player_name"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#010100"
-            android:textSize="55sp"
+            android:textSize="65sp"
             android:typeface="sans"
             android:layout_below="@+id/textView"
             android:layout_alignParentLeft="true"
@@ -79,10 +79,10 @@
         android:background="@drawable/sel_btn_alphabet"
         android:text="@string/alphabet"
         android:textSize="45sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/code_btn"
@@ -91,10 +91,10 @@
         android:background="@drawable/sel_btn_code"
         android:text="@string/makecode"
         android:textSize="45sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/train_btn"
@@ -103,10 +103,10 @@
         android:background="@drawable/sel_btn_train"
         android:text="@string/totrain"
         android:textSize="45sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/tips_btn"
@@ -115,10 +115,10 @@
         android:background="@drawable/sel_btn_key"
         android:text="@string/tips"
         android:textSize="45sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
 
     <Button
         android:id="@+id/exit_btn"
@@ -127,10 +127,10 @@
         android:background="@drawable/sel_btn_exit"
         android:text="@string/toexit"
         android:textSize="45sp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp" />
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp" />
         </LinearLayout>
         </ScrollView>
 </LinearLayout>

@@ -36,15 +36,19 @@ public class SymbsListActivity extends AppCompatActivity {
     /**Таблица отдельных русских букв в качестве символов*/
     HashMap<Integer, Character> soundsSymbs;
     final static String symbsAlphabet="1234567890,.;:?)!-/@&+=_$";
+    /**Слушатель для кнопки перехода из данной активности в соседнюю*/
+    View.OnClickListener fromSymbs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alphabet_list_symbs);
+        if (savedInstanceState == null) {
+            setContentView(R.layout.alphabet_list_symbs);}
         toEngListFromSymbs=(Button)findViewById(R.id.toEngListFromSymbs);
+        initListener();
         toEngListFromSymbs.setOnClickListener(fromSymbs);
         listAlphabetSymbs = (ListView) findViewById(R.id.listAlphabetSymbs);
-        alphaListSymbs = new ArrayList<HashMap<String, Object>>();
+        alphaListSymbs = new ArrayList<>();
         context=this;
         sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
         soundsSymbs=new HashMap<>();
@@ -96,17 +100,16 @@ public class SymbsListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MakeSounds.playSound(soundsSymbs.get(position), sp);
             }
-        });
-    }
-    /**Слушатель для кнопки перехода из данной активности в соседнюю*/
-    View.OnClickListener fromSymbs=new View.OnClickListener(){
+        });}
+    public void initListener(){
+        fromSymbs=new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
             startActivity(new Intent(SymbsListActivity.this, EngListActivity.class));
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
         }
-    };
+    };}
     /**При нажатии на кнопку Back пользователь попадает в главное меню*/
     @Override
     public void onBackPressed(){
@@ -138,3 +141,4 @@ public class SymbsListActivity extends AppCompatActivity {
         super.onRestart();
     }
 }
+

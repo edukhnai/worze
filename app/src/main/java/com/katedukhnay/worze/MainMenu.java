@@ -4,13 +4,14 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 /**Главное меню*/
@@ -23,31 +24,42 @@ public class MainMenu extends AppCompatActivity {
     TextView name_tv;
     /** Контекст главного меню */
 Context context;
+    /** Слушатель нажатий на кнопки в главном меню*/
+    View.OnClickListener listener1;
+    LinearLayout linButtons;
+    ScrollView scrollButtons;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
             setContentView(R.layout.mainmenu);
         }
-        ws=WorzeSingleton.getInstance(getApplicationContext());
-        context=this.getApplicationContext();
-        alphabet_btn=(Button)findViewById(R.id.alphabet_btn);
-        alphabet_btn.setOnClickListener(this.listener1);
-        code_btn=(Button)findViewById(R.id.code_btn);
-        code_btn.setOnClickListener(this.listener1);
-        train_btn=(Button)findViewById(R.id.train_btn);
-        train_btn.setOnClickListener(this.listener1);
-        tips_btn=(Button)findViewById(R.id.tips_btn);
-        tips_btn.setOnClickListener(this.listener1);
-        exit_btn=(Button)findViewById(R.id.exit_btn);
-        exit_btn.setOnClickListener(this.listener1);
-        name_tv=(TextView)findViewById(R.id.name_tv);
-        name_tv.setText(ws.getName()+"!");
+        ws = WorzeSingleton.getInstance(getApplicationContext());
+        context = this.getApplicationContext();
+        initListener();
+        scrollButtons = (ScrollView) findViewById(R.id.scrollButtons);
+        linButtons = (LinearLayout) findViewById(R.id.linButtons);
+        if (linButtons != null)  linButtons.setOnClickListener(listener1);
+        alphabet_btn = (Button) findViewById(R.id.alphabet_btn);
+        if (alphabet_btn != null)  alphabet_btn.setOnClickListener(this.listener1);
+        code_btn = (Button) findViewById(R.id.code_btn);
+        if (code_btn!= null)code_btn.setOnClickListener(this.listener1);
+        train_btn = (Button) findViewById(R.id.train_btn);
+        if (train_btn!= null)  train_btn.setOnClickListener(this.listener1);
+        tips_btn = (Button) findViewById(R.id.tips_btn);
+        if (tips_btn!= null) tips_btn.setOnClickListener(this.listener1);
+        exit_btn = (Button) findViewById(R.id.exit_btn);
+        if (exit_btn!= null)exit_btn.setOnClickListener(this.listener1);
+        name_tv = (TextView) findViewById(R.id.name_tv);
+        name_tv.setText(ws.getName().concat(getString(R.string.exclam_point)));
         name_tv.setOnClickListener(this.listener1);
+    }
 
-}
-    /** Слушатель нажатий на кнопки в главном меню*/
-View.OnClickListener listener1= new View.OnClickListener() {
+
+/**Метод для инициализации слушателя нажатий на кнопки*/
+public void initListener(){
+listener1= new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -84,7 +96,7 @@ View.OnClickListener listener1= new View.OnClickListener() {
                                        ws.makeToast(context, getString(R.string.unnorm_word), R.drawable.toast_red);
                                             return;}
                                         ws.setName(straddName);
-                                        name_tv.setText(ws.getName()+"!");
+                                        name_tv.setText(ws.getName().concat(getString(R.string.exclam_point)));
                                         dialog.dismiss();
                                     }
 
@@ -102,30 +114,16 @@ View.OnClickListener listener1= new View.OnClickListener() {
             case R.id.train_btn:
                 startActivity(new Intent(MainMenu.this, TrainOptions.class));
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                ;
                 break;
             case R.id.tips_btn:
                 startActivity(new Intent(MainMenu.this, Tips.class));
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                ;
                 break;
             case R.id.exit_btn:
-                Intent j = new Intent(Intent.ACTION_MAIN);
-
-                j.addCategory(Intent.CATEGORY_HOME);
-
-                j.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                startActivity(j);
-
-                finish();
-
-                System.exit(0);
-
+                finishAffinity();
                 break;
         }
-    }};
-
+    }};}
     @Override
     protected void onStop() {
         super.onStop();
