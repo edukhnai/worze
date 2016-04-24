@@ -184,7 +184,7 @@ public void initListener(){
                                     return true;
                                 case R.id.tosend:
                                     if(sp!=null)sp.release();
-                                    if (textbelow.getText().toString().equals("")) {
+                                    if (textbelow.getText().toString().replaceAll("\\s", "").equals("")) {
                                         ws.makeToast(context, getString(R.string.translate_anything), R.drawable.toast_red);
                                     } else {
                                         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -221,10 +221,11 @@ public void initListener(){
                         if (ws.getConverting() == 0) {
                             textbelow.setText(CodingMeths.coding(textabove.getText().toString().toLowerCase()));
                             if (ws.getUsingSounds() == 1) {
+                                if(sp==null)initSounds();
                                Thread soundThread = new Thread() {
                                     @Override
                                     public void run() {
-                                        String st = textabove.getText().toString().replaceAll("\\s", "").toLowerCase();
+                                        String st = textabove.getText().toString().toLowerCase().replaceAll("\\s","");
                                         for (int i = 0; i < st.length(); i++) {
                                             MakeSounds.playSound(st.charAt(i), sp);
                                             MakeSounds.makeDelay(ws.getDelay());
@@ -365,6 +366,7 @@ public void initSounds(){
             if ((!textabove.getText().toString().equals("") || !textbelow.getText().toString().equals("")) && mAccel * mAccel > 150) {
                 textabove.setText("");
                 textbelow.setText("");
+                if(sp!=null)sp.release();
                 mAccelLast = mAccelCurrent = mAccel = 0;
 
             }

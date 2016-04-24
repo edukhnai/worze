@@ -59,14 +59,7 @@ public class TrainActivity extends AppCompatActivity {
         }
         ws = WorzeSingleton.getInstance(getApplicationContext());
         context = this.getApplicationContext();
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
-        Thread thread = new Thread() {
-            @Override
-            public void run() {
-                MakeSounds.loadSounds(soundPool, context);
-            }
-        };
-        thread.start();
+       initSounds();
         str = "";
         train_et = (EditText) findViewById(R.id.train_et);
         ready_train = (Button) findViewById(R.id.ready_train);
@@ -76,7 +69,16 @@ public class TrainActivity extends AppCompatActivity {
         if(btnReady!=null)btnReady.setOnClickListener(trainListener);
 
     }
-
+public void initSounds(){
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                MakeSounds.loadSounds(soundPool, context);
+            }
+        };
+        thread.start();
+    }
     public void initListener() {
         trainListener = new View.OnClickListener() {
             @Override
@@ -100,11 +102,9 @@ public class TrainActivity extends AppCompatActivity {
                     case R.id.btnReady:
                         counter++;
                         Log.d("myLogs", "counter=" + counter);
-                            btnReady.setBackgroundResource(R.mipmap.playsay_btn_selected);
                         btnReady.setClickable(false);
                             playTrainSounds();
                         btnReady.setClickable(true);
-                        btnReady.setBackgroundResource(R.mipmap.playsay_btn);
                         break;
                 }
             }
@@ -112,7 +112,7 @@ public class TrainActivity extends AppCompatActivity {
     }
 
     /**
-     * Метод, создающий массив произвольных символов в соответствии с предпочтениями пользователя, проигрывающий их кодировки
+     * Метод, создающий массив произвольных символов из 5 элементов (группу) в соответствии с предпочтениями пользователя, проигрывающий их кодировки
      * и сохраняющий правильную строку
      */
     public void playGroups() {
@@ -138,6 +138,7 @@ public class TrainActivity extends AppCompatActivity {
         } else {
             ch = ws.getRightStr().toCharArray();
         }
+        if(soundPool==null)initSounds();
         for (int j = 0; j < ch.length; j++) {
             MakeSounds.playSound(ch[j], soundPool);
             MakeSounds.makeDelay(ws.getDelay());
@@ -158,7 +159,8 @@ public class TrainActivity extends AppCompatActivity {
     }
 
     /**
-     * Метод для сравнения пользовательского ответа с правильным и возвращающий
+     * Метод для сравнения пользовательского ответа с правильным и возвращающий правильность ответа
+     * пользователя в процентном соотношении
      */
     public int compareAnswer(String right_str, String custom_str) {
         int res = 0;
