@@ -53,7 +53,7 @@
     <string name="point">точка</string>
     <string name="tire">тире</string>
     <string name="groupsquant">Количество групп</string>
-    <string name="timing">Задержка времени между символами, с</string>
+    <string name="timing">Задержка между символами, с</string>
     <string name="edges_error">\u0020\u0020Ты вышел за пределы допустимых значений\u0020\u0020</string>
     <string name="language">Язык</string>
     <string name="ruslang">Рус</string>

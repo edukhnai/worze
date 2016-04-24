@@ -48,6 +48,7 @@ public class TrainActivity extends AppCompatActivity {
     View.OnClickListener trainListener;
    /**Счетчик нажатий на кнопку динамика*/
     int counter;
+    Thread trainThread;
 
 
     @Override
@@ -58,15 +59,7 @@ public class TrainActivity extends AppCompatActivity {
         }
         ws = WorzeSingleton.getInstance(getApplicationContext());
         context = this.getApplicationContext();
-        str = "";
-        train_et = (EditText) findViewById(R.id.train_et);
-        ready_train = (Button) findViewById(R.id.ready_train);
-        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
-        initListener();
-        ready_train.setOnClickListener(trainListener);
-        btnReady = (Button) findViewById(R.id.btnReady);
-        if(btnReady!=null)btnReady.setOnClickListener(trainListener);
-
+        soundPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -74,6 +67,14 @@ public class TrainActivity extends AppCompatActivity {
             }
         };
         thread.start();
+        str = "";
+        train_et = (EditText) findViewById(R.id.train_et);
+        ready_train = (Button) findViewById(R.id.ready_train);
+        initListener();
+        ready_train.setOnClickListener(trainListener);
+        btnReady = (Button) findViewById(R.id.btnReady);
+        if(btnReady!=null)btnReady.setOnClickListener(trainListener);
+
     }
 
     public void initListener() {
@@ -98,9 +99,10 @@ public class TrainActivity extends AppCompatActivity {
                         break;
                     case R.id.btnReady:
                         counter++;
+                        Log.d("myLogs", "counter=" + counter);
                             btnReady.setBackgroundResource(R.mipmap.playsay_btn_selected);
                         btnReady.setClickable(false);
-                            new MyTask().execute();
+                            playTrainSounds();
                         btnReady.setClickable(true);
                         btnReady.setBackgroundResource(R.mipmap.playsay_btn);
                         break;
@@ -234,28 +236,17 @@ public class TrainActivity extends AppCompatActivity {
     }
 
     /**
-     * AsyncTask для воспроизведения звуков
+     * поток для воспроизведения звуков
      */
-    class MyTask extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            for (int i = 0; i < ws.getGroups(); i++) {
-                playGroups();
+    public void playTrainSounds(){
+        trainThread = new Thread() {
+            @Override
+            public void run() {
+                for (int i = 0; i < ws.getGroups(); i++) {
+                    playGroups();
+                }
             }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void res) {
-            super.onPostExecute(res);
-        }
-
+        };
+        trainThread.start();
     }
 }

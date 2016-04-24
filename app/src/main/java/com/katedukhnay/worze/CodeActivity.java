@@ -317,7 +317,7 @@ public void initListener(){
                 mylistener, s, SensorManager.SENSOR_DELAY_NORMAL);
     }
 public void initSounds(){
-    sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 100);
+    sp = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
     Thread thread = new Thread() {
         @Override
         public void run() {
