@@ -78,7 +78,7 @@ public class CodeActivity extends AppCompatActivity {
      * Слушатель нажатий на кнопки
      */
     View.OnClickListener listener2;
-/**ПОДПИСАТЬ СРОЧНА!!!!111АДЫНАДЫН*/
+/**Поток для запуска звуков*/
     Thread soundThread;
 
     @Override
